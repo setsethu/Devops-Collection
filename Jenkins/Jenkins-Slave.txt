@@ -1,0 +1,43 @@
+    1  amazon-linux-extras install epel
+    2  amazon-linux-extras install java-openjdk11
+    3  yum install git -y
+    4  sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.1/binaries/apache-maven-3.9.1-bin.tar.gz
+    5  sudo tar xf apache-maven-3.9.1-bin.tar.gz -C /opt
+    6  sudo ln -s /opt/apache-maven-3.9.1 /opt/maven
+    7  cd /usr/lib/jvm/
+    8  ls
+    9  ls -a
+   10  cd ~
+   11  cd /opt/
+   12  ls
+   13  cd ~
+   14  vi export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.amzn2.0.1.x86_64"
+   15  ls -a
+   16  vi .ssh
+   17  mkdir ?
+   18  ls
+   19  rm -r ?
+   20  ls
+   21  rm -r ?
+   22  ls
+   23  ls -a
+   24  rm -r .ssh
+   25  ls
+   26  ls -a
+   27  cd .ssh/
+   28  ls
+   29  cd ~
+   30  rm -r .ssh
+   31  ls -a
+   32  nkdir .ssh
+   33  mkdir .ssh
+   34  ls
+   35  ls -a
+   36  vi .bash_profile 
+   37  vi .bash
+   38  vi .bashrc
+   39  source ~/.bash_profile
+   40  source ~/.bashrc
+   41  mvn --version
+   
+  
