@@ -1,0 +1,131 @@
+Last login: Tue Mar 28 06:50:01 2023 from ec2-13-233-177-4.ap-south-1.compute.amazonaws.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+No packages needed for security; 2 packages available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-40-134 ~]$ sudo -I
+sudo: invalid option -- 'I'
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user] [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p prompt] [-T timeout] [-u user] file ...
+[ec2-user@ip-172-31-40-134 ~]$ SUDO -I
+-bash: SUDO: command not found
+[ec2-user@ip-172-31-40-134 ~]$ sudo -i
+[root@ip-172-31-40-134 ~]# useradd devopsadmin
+[root@ip-172-31-40-134 ~]# history
+    1  cd /opt
+    2  wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.87/bin/apache-tomcat-8.5.87.tar.gz
+    3  yum update -y
+    4  amazon-linux-extras install epel
+    5  amazon-linux-extras install java-openjdk11
+    6  vi .bash_profile
+    7  cd ~
+    8  ls
+    9  ls -a
+   10  vi .bash_profile 
+   11  vi .bashrc
+   12  source ~/.bash_profile
+   13  wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.87/bin/apache-tomcat-8.5.87.tar.gz
+   14  tar -xvzf /opt/apache-tomcat-8.5.87.tar.gz
+   15  mv apache-tomcat-8.5.87 tomcat
+   16  cd /opt/tomcat/bin
+   17  cd /usr/lib/jvm
+   18  ls
+   19  source ~/.bashrc
+   20  mv apache-tomcat-8.5.87 tomcat
+   21  tar -xvzf /opt/apache-tomcat-8.5.87.tar.gz
+   22  cd /opt
+   23  ls
+   24  wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.87/bin/apache-tomcat-8.5.87.tar.gz
+   25  tar -xvzf /opt/apache-tomcat-8.5.87.tar.gz
+   26  ls
+   27  mv apache-tomcat-8.5.87 tomcat
+   28  ls
+   29  cd tomcat/
+   30  ls
+   31  cd bin/
+   32  ls
+   33  cd /opt/tomcat/bin
+   34  pwd
+   35  ./startup.sh
+   36  useradd devopsadmin
+   37  history
+[root@ip-172-31-40-134 ~]# 
+[root@ip-172-31-40-134 ~]# su - devopsadmin
+[devopsadmin@ip-172-31-40-134 ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/devopsadmin/.ssh/id_rsa): 
+Created directory '/home/devopsadmin/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/devopsadmin/.ssh/id_rsa.
+Your public key has been saved in /home/devopsadmin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:mJvTyUPoA6RDGVCaIP2VNvg2iU2nzYl1v+5VbRMIgxk devopsadmin@ip-172-31-40-134.ap-south-1.compute.internal
+The key's randomart image is:
++---[RSA 2048]----+
+|++o  . . E+o     |
+|oo.o. * oo. o .  |
+|o o..B X o . . . |
+| . oo O++   .   o|
+|  o ..+.S    . .+|
+|   . o * .  .  o.|
+|      * =  .  .  |
+|       o .  ..   |
+|           ..    |
++----[SHA256]-----+
+[devopsadmin@ip-172-31-40-134 ~]$ ls ~/.ssh
+id_rsa  id_rsa.pub
+[devopsadmin@ip-172-31-40-134 ~]$ cd /home/devopsadmin/.ssh
+[devopsadmin@ip-172-31-40-134 .ssh]$ cat id_rsa.pub > authorized_keys
+[devopsadmin@ip-172-31-40-134 .ssh]$ ls
+authorized_keys  id_rsa  id_rsa.pub
+[devopsadmin@ip-172-31-40-134 .ssh]$ ll
+total 12
+-rw-rw-r-- 1 devopsadmin devopsadmin  438 Mar 28 08:41 authorized_keys
+-rw------- 1 devopsadmin devopsadmin 1679 Mar 28 08:40 id_rsa
+-rw-r--r-- 1 devopsadmin devopsadmin  438 Mar 28 08:40 id_rsa.pub
+[devopsadmin@ip-172-31-40-134 .ssh]$ chown -R devopsadmin /home/devopsadmin/.ssh
+[devopsadmin@ip-172-31-40-134 .ssh]$ chmod 600 /home/devopsadmin/.ssh/authorized_keys
+[devopsadmin@ip-172-31-40-134 .ssh]$ 
+[devopsadmin@ip-172-31-40-134 .ssh]$ chmod 700 /home/devopsadmin/.ssh
+[devopsadmin@ip-172-31-40-134 .ssh]$ 
+[devopsadmin@ip-172-31-40-134 .ssh]$ ll
+total 12
+-rw------- 1 devopsadmin devopsadmin  438 Mar 28 08:41 authorized_keys
+-rw------- 1 devopsadmin devopsadmin 1679 Mar 28 08:40 id_rsa
+-rw-r--r-- 1 devopsadmin devopsadmin  438 Mar 28 08:40 id_rsa.pub
+[devopsadmin@ip-172-31-40-134 .ssh]$ chown -R devopsadmin /opt/tomcat
+chown: cannot read directory ‘/opt/tomcat/conf’: Permission denied
+chown: cannot read directory ‘/opt/tomcat/bin’: Permission denied
+chown: cannot read directory ‘/opt/tomcat/lib’: Permission denied
+chown: cannot read directory ‘/opt/tomcat/logs’: Permission denied
+chown: cannot read directory ‘/opt/tomcat/temp’: Permission denied
+chown: cannot read directory ‘/opt/tomcat/webapps’: Permission denied
+chown: cannot read directory ‘/opt/tomcat/work’: Permission denied
+chown: changing ownership of ‘/opt/tomcat/BUILDING.txt’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat/CONTRIBUTING.md’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat/LICENSE’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat/NOTICE’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat/README.md’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat/RELEASE-NOTES’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat/RUNNING.txt’: Operation not permitted
+chown: changing ownership of ‘/opt/tomcat’: Operation not permitted
+[devopsadmin@ip-172-31-40-134 .ssh]$ ll
+total 12
+-rw------- 1 devopsadmin devopsadmin  438 Mar 28 08:41 authorized_keys
+-rw------- 1 devopsadmin devopsadmin 1679 Mar 28 08:40 id_rsa
+-rw-r--r-- 1 devopsadmin devopsadmin  438 Mar 28 08:40 id_rsa.pub
+[devopsadmin@ip-172-31-40-134 .ssh]$ /home/devopsadmin
+-bash: /home/devopsadmin: Is a directory
+[devopsadmin@ip-172-31-40-134 .ssh]$ ll
+total 12
+-rw------- 1 devopsadmin devopsadmin  438 Mar 28 08:41 authorized_keys
+-rw------- 1 devopsadmin devopsadmin 1679 Mar 28 08:40 id_rsa
+-rw-r--r-- 1 devopsadmin devopsadmin  438 Mar 28 08:40 id_rsa.pub
