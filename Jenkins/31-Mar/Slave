@@ -727,3 +727,46 @@ PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME:$M2
 [root@ip-172-31-41-128 ~]# source ~/.bashrc
 [root@ip-172-31-41-128 ~]# 
 [root@ip-172-31-41-128 ~]# 
+[root@ip-172-31-41-128 ~]# 
+[root@ip-172-31-41-128 ~]# useradd devopsadmin
+[root@ip-172-31-41-128 ~]# su - devopsadmin
+[devopsadmin@ip-172-31-41-128 ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/devopsadmin/.ssh/id_rsa): 
+Created directory '/home/devopsadmin/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/devopsadmin/.ssh/id_rsa.
+Your public key has been saved in /home/devopsadmin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:wcjQxxs9QMhhZ8FWe4RVpszJyXdJ5XkB9zpOogBjOoE devopsadmin@ip-172-31-41-128.ap-south-1.compute.internal
+The key's randomart image is:
++---[RSA 2048]----+
+|    .oo**=.ooo++o|
+|   . ++=* +B =o.=|
+|  E . *ooo..X .o=|
+|     + o.. . . o.|
+|    o   S   . +  |
+|     .   . . + . |
+|          .   .  |
+|                 |
+|                 |
++----[SHA256]-----+
+[devopsadmin@ip-172-31-41-128 ~]$ ls ~/.ssh 
+id_rsa  id_rsa.pub
+[devopsadmin@ip-172-31-41-128 ~]$ cat id_rsa.pub > authorized_keys
+cat: id_rsa.pub: No such file or directory
+[devopsadmin@ip-172-31-41-128 ~]$ ls -a
+.  ..  authorized_keys  .bash_logout  .bash_profile  .bashrc  .ssh
+[devopsadmin@ip-172-31-41-128 ~]$ ls .ssh/
+id_rsa  id_rsa.pub
+[devopsadmin@ip-172-31-41-128 ~]$ cat id_rsa.pub > authorized_keys
+cat: id_rsa.pub: No such file or directory
+[devopsadmin@ip-172-31-41-128 ~]$ cd .ssh/
+[devopsadmin@ip-172-31-41-128 .ssh]$ ls
+id_rsa  id_rsa.pub
+[devopsadmin@ip-172-31-41-128 .ssh]$ cat id_rsa.pub > authorized_keys
+[devopsadmin@ip-172-31-41-128 .ssh]$ chown -R devopsadmin /home/devopsadmin/.ssh
+[devopsadmin@ip-172-31-41-128 .ssh]$ chmod 600 /home/devopsadmin/.ssh/authorized_keys
+[devopsadmin@ip-172-31-41-128 .ssh]$ chmod 700 /home/devopsadmin/.ssh
+[devopsadmin@ip-172-31-41-128 .ssh]$ 
