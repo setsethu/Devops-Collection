@@ -504,3 +504,184 @@ The key's randomart image is:
 | . .o+. +. ..    |
 +----[SHA256]-----+
 [devopsadmin@ip-172-31-12-153 ~]$ 
+[devopsadmin@ip-172-31-12-153 ~]$ ssh-copy-id ansibleadmin@172.31.15.127
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/devopsadmin/.ssh/id_rsa.pub"
+The authenticity of host '172.31.15.127 (172.31.15.127)' can't be established.
+ECDSA key fingerprint is SHA256:zBOU/+rdeyCCmSH1Em9+Rimy6kBSQ5agvxSGdGt3fSY.
+ECDSA key fingerprint is MD5:c3:9e:51:7a:ef:63:5a:bf:e5:40:c2:7b:93:f2:f9:d4.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+ansibleadmin@172.31.15.127's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'ansibleadmin@172.31.15.127'"
+and check to make sure that only the key(s) you wanted were added.
+
+[devopsadmin@ip-172-31-12-153 ~]$ ssh ansibleadmin@172.31.15.127
+Last login: Fri Mar 31 16:24:57 2023
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ansibleadmin@ip-172-31-15-127 ~]$ vi etc/ansible/host
+[ansibleadmin@ip-172-31-15-127 ~]$ cd etc/ansible
+-bash: cd: etc/ansible: No such file or directory
+[ansibleadmin@ip-172-31-15-127 ~]$ exit
+logout
+Connection to 172.31.15.127 closed.
+[devopsadmin@ip-172-31-12-153 ~]$ cd etc/ansible
+-bash: cd: etc/ansible: No such file or directory
+[devopsadmin@ip-172-31-12-153 ~]$ cd /etc
+[devopsadmin@ip-172-31-12-153 etc]$ ls
+acpi               cifs-utils               dracut.conf         grub2-efi.cfg        iproute2        machine-id         openldap        python            rwtab          statetab.d          update-motd.d
+adjtime            cloud                    dracut.conf.d       grub.d               issue           magic              opt             rc0.d             rwtab.d        subgid              vimrc
+aliases            cron.d                   e2fsck.conf         gshadow              issue.net       man_db.conf        os-release      rc1.d             sasl2          subuid              virc
+aliases.db         cron.daily               environment         gshadow-             krb5.conf       mke2fs.conf        pam.d           rc2.d             scl            sudo.conf           wgetrc
+alternatives       cron.deny                ethertypes          gss                  krb5.conf.d     modprobe.d         passwd          rc3.d             screenrc       sudoers             X11
+amazon             cron.hourly              exports             gssproxy             ld.so.cache     modules-load.d     passwd-         rc4.d             securetty      sudoers.d           xdg
+anacrontab         cron.monthly             exports.d           hibagent-config.cfg  ld.so.conf      motd               pkcs11          rc5.d             security       sudo-ldap.conf      xinetd.d
+ansible            crontab                  filesystems         hibinit-config.cfg   ld.so.conf.d    mtab               pki             rc6.d             selinux        sysconfig           yum
+at.deny            cron.weekly              fstab               host.conf            libaudit.conf   my.cnf             plymouth        rc.d              services       sysctl.conf         yum.conf
+audisp             csh.cshrc                gcrypt              hostname             libnl           my.cnf.d           pm              rc.local          sestatus.conf  sysctl.d            yum.repos.d
+audit              csh.login                GeoIP.conf          hosts                libuser.conf    nanorc             popt.d          request-key.conf  setuptool.d    systemd
+bash_completion.d  dbus-1                   GeoIP.conf.default  hosts.allow          locale.conf     netconfig          postfix         request-key.d     shadow         system-release
+bashrc             default                  gnupg               hosts.deny           localtime       NetworkManager     ppp             resolv.conf       shadow-        system-release-cpe
+binfmt.d           depmod.d                 GREP_COLORS         idmapd.conf          login.defs      networks           prelink.conf.d  rpc               shells         terminfo
+chkconfig.d        dhcp                     groff               image-id             logrotate.conf  nfs.conf           printcap        rpm               skel           tmpfiles.d
+chrony.conf        DIR_COLORS               group               init.d               logrotate.d     nfsmount.conf      profile         rsyncd.conf       ssh            trusted-key.key
+chrony.d           DIR_COLORS.256color      group-              inittab              lsm             nsswitch.conf      profile.d       rsyslog.conf      ssl            udev
+chrony.keys        DIR_COLORS.lightbgcolor  grub2.cfg           inputrc              lvm             nsswitch.conf.bak  protocols       rsyslog.d         statetab       updatedb.conf
+[devopsadmin@ip-172-31-12-153 etc]$ ansible
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+ansible: error: too few arguments
+[devopsadmin@ip-172-31-12-153 etc]$ cd ansible/
+[devopsadmin@ip-172-31-12-153 ansible]$ ls
+ansible.cfg  hosts  roles
+[devopsadmin@ip-172-31-12-153 ansible]$ hosts
+-bash: hosts: command not found
+[devopsadmin@ip-172-31-12-153 ansible]$ cat hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+
+[devopsadmin@ip-172-31-12-153 ansible]$ ^C
+[devopsadmin@ip-172-31-12-153 ansible]$ ^C
+[devopsadmin@ip-172-31-12-153 ansible]$ vi etc/ansible/host
+[devopsadmin@ip-172-31-12-153 ansible]$ cat hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+
+[devopsadmin@ip-172-31-12-153 ansible]$ vi hosts 
+[devopsadmin@ip-172-31-12-153 ansible]$ 
+[devopsadmin@ip-172-31-12-153 ansible]$ 
+[devopsadmin@ip-172-31-12-153 ansible]$ cd ~
+[devopsadmin@ip-172-31-12-153 ~]$ ansible testnodes -m ping
+[WARNING]: Platform linux on host node1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+node1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+[devopsadmin@ip-172-31-12-153 ~]$ 
+[devopsadmin@ip-172-31-12-153 ~]$ 
