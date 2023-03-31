@@ -615,4 +615,13 @@ Mar 31 11:58:03 ip-172-31-32-201.ap-south-1.compute.internal systemd[1]: Started
 Mar 31 11:58:03 ip-172-31-32-201.ap-south-1.compute.internal jenkins[4871]: 2023-03-31 11:58:03.500+0000 [id=45]        INFO        h.m.DownloadService$Downloadable#load: Obtained the updated data ...enInstaller
 Mar 31 11:58:03 ip-172-31-32-201.ap-south-1.compute.internal jenkins[4871]: 2023-03-31 11:58:03.500+0000 [id=45]        INFO        hudson.util.Retrier#start: Performed the action check updates ser... attempt #1
 Hint: Some lines were ellipsized, use -l to show in full.
+[root@ip-172-31-32-201 ~]# cd /var/lib/jenkins/secrets/
+[root@ip-172-31-32-201 secrets]# ls
+initialAdminPassword  jenkins.model.Jenkins.crumbSalt  master.key
+[root@ip-172-31-32-201 secrets]# cd initialAdminPassword
+-bash: cd: initialAdminPassword: Not a directory
+[root@ip-172-31-32-201 secrets]# cat initialAdminPassword 
+4a8c5fb18f69431494933247ec7d08ab
+[root@ip-172-31-32-201 secrets]# 
+
 
