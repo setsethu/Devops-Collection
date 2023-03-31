@@ -1,0 +1,506 @@
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-12-153 ~]$ amazon-linux-extras install epel -y
+You lack permissions to write to system configuration.  /etc/yum.repos.d/amzn2-extras.repo
+[ec2-user@ip-172-31-12-153 ~]$ sudo -i
+[root@ip-172-31-12-153 ~]# amazon-linux-extras install epel -y
+Installing epel-release
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-epel amzn2extra-kernel-5.10
+17 metadata files removed
+6 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                           | 3.0 kB  00:00:00     
+amzn2extra-epel                                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                                      | 3.0 kB  00:00:00     
+(1/9): amzn2-core/2/x86_64/group_gz                                                                                                                                                         | 2.5 kB  00:00:00     
+(2/9): amzn2-core/2/x86_64/updateinfo                                                                                                                                                       | 583 kB  00:00:00     
+(3/9): amzn2extra-epel/2/x86_64/primary_db                                                                                                                                                  | 1.8 kB  00:00:00     
+(4/9): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                           |  26 kB  00:00:00     
+(5/9): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                                | 103 kB  00:00:00     
+(6/9): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                                | 8.0 kB  00:00:00     
+(7/9): amzn2extra-epel/2/x86_64/updateinfo                                                                                                                                                  |   76 B  00:00:00     
+(8/9): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                           |  16 MB  00:00:00     
+(9/9): amzn2-core/2/x86_64/primary_db                                                                                                                                                       |  70 MB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-11 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                              Arch                                           Version                                         Repository                                               Size
+===================================================================================================================================================================================================================
+Installing:
+ epel-release                                         noarch                                         7-11                                            amzn2extra-epel                                          15 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 15 k
+Installed size: 24 k
+Downloading packages:
+epel-release-7-11.noarch.rpm                                                                                                                                                                |  15 kB  00:00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : epel-release-7-11.noarch                                                                                                                                                                        1/1 
+  Verifying  : epel-release-7-11.noarch                                                                                                                                                                        1/1 
+
+Installed:
+  epel-release.noarch 0:7-11                                                                                                                                                                                       
+
+Complete!
+  0  ansible2                 available    \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel=latest              enabled      [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 39 †ruby2.6                  available    [ =2.6  =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-12-153 ~]# amazon-linux-extras install ansible2 -y
+Installing ansible
+
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Existing lock /var/run/yum.pid: another copy is running as pid 3767.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 256 M RSS (548 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:06 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 287 M RSS (579 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:08 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 348 M RSS (641 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:10 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 337 M RSS (629 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:12 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 337 M RSS (629 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:14 ago
+    State  : Running, pid: 3767
+Cleaning repos: amzn2-core amzn2extra-ansible2 amzn2extra-docker amzn2extra-epel amzn2extra-kernel-5.10 epel
+28 metadata files removed
+10 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+amzn2extra-ansible2                                                                                                                                                                         | 3.0 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                           | 3.0 kB  00:00:00     
+amzn2extra-epel                                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                                      | 3.0 kB  00:00:00     
+epel/x86_64/metalink                                                                                                                                                                        | 4.7 kB  00:00:00     
+epel                                                                                                                                                                                        | 4.7 kB  00:00:00     
+(1/14): amzn2-core/2/x86_64/group_gz                                                                                                                                                        | 2.5 kB  00:00:00     
+(2/14): amzn2-core/2/x86_64/updateinfo                                                                                                                                                      | 583 kB  00:00:00     
+(3/14): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                               | 103 kB  00:00:00     
+(4/14): amzn2extra-epel/2/x86_64/updateinfo                                                                                                                                                 |   76 B  00:00:00     
+(5/14): amzn2extra-epel/2/x86_64/primary_db                                                                                                                                                 | 1.8 kB  00:00:00     
+(6/14): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                          |  26 kB  00:00:00     
+(7/14): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                               | 8.0 kB  00:00:00     
+(8/14): amzn2extra-ansible2/2/x86_64/updateinfo                                                                                                                                             |   76 B  00:00:00     
+(9/14): amzn2extra-ansible2/2/x86_64/primary_db                                                                                                                                             |  40 kB  00:00:00     
+(10/14): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                         |  16 MB  00:00:00     
+(11/14): epel/x86_64/group_gz                                                                                                                                                               |  99 kB  00:00:00     
+(12/14): amzn2-core/2/x86_64/primary_db                                                                                                                                                     |  70 MB  00:00:01     
+(13/14): epel/x86_64/updateinfo                                                                                                                                                             | 1.0 MB  00:00:00     
+(14/14): epel/x86_64/primary_db                                                                                                                                                             | 7.0 MB  00:00:00     
+240 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package ansible.noarch 0:2.9.23-1.amzn2 will be installed
+--> Processing Dependency: sshpass for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-paramiko for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-keyczar for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-httplib2 for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-crypto for package: ansible-2.9.23-1.amzn2.noarch
+--> Running transaction check
+---> Package python-keyczar.noarch 0:0.71c-2.amzn2 will be installed
+---> Package python-paramiko.noarch 0:2.1.1-0.10.el7 will be installed
+---> Package python2-crypto.x86_64 0:2.6.1-13.amzn2.0.3 will be installed
+--> Processing Dependency: libtomcrypt.so.1()(64bit) for package: python2-crypto-2.6.1-13.amzn2.0.3.x86_64
+---> Package python2-httplib2.noarch 0:0.18.1-3.amzn2 will be installed
+---> Package sshpass.x86_64 0:1.06-1.amzn2.0.1 will be installed
+--> Running transaction check
+---> Package libtomcrypt.x86_64 0:1.18.2-1.amzn2.0.1 will be installed
+--> Processing Dependency: libtommath >= 1.0 for package: libtomcrypt-1.18.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: libtommath.so.1()(64bit) for package: libtomcrypt-1.18.2-1.amzn2.0.1.x86_64
+--> Running transaction check
+---> Package libtommath.x86_64 0:1.0.1-4.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                             Arch                                      Version                                                Repository                                              Size
+===================================================================================================================================================================================================================
+Installing:
+ ansible                                             noarch                                    2.9.23-1.amzn2                                         amzn2extra-ansible2                                     17 M
+Installing for dependencies:
+ libtomcrypt                                         x86_64                                    1.18.2-1.amzn2.0.1                                     amzn2extra-ansible2                                    409 k
+ libtommath                                          x86_64                                    1.0.1-4.amzn2.0.1                                      amzn2extra-ansible2                                     36 k
+ python-keyczar                                      noarch                                    0.71c-2.amzn2                                          amzn2extra-ansible2                                    218 k
+ python-paramiko                                     noarch                                    2.1.1-0.10.el7                                         epel                                                   269 k
+ python2-crypto                                      x86_64                                    2.6.1-13.amzn2.0.3                                     amzn2extra-ansible2                                    476 k
+ python2-httplib2                                    noarch                                    0.18.1-3.amzn2                                         amzn2extra-ansible2                                    125 k
+ sshpass                                             x86_64                                    1.06-1.amzn2.0.1                                       amzn2extra-ansible2                                     22 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package (+7 Dependent packages)
+
+Total download size: 19 M
+Installed size: 110 M
+Downloading packages:
+(1/8): libtomcrypt-1.18.2-1.amzn2.0.1.x86_64.rpm                                                                                                                                            | 409 kB  00:00:00     
+(2/8): libtommath-1.0.1-4.amzn2.0.1.x86_64.rpm                                                                                                                                              |  36 kB  00:00:00     
+(3/8): python-keyczar-0.71c-2.amzn2.noarch.rpm                                                                                                                                              | 218 kB  00:00:00     
+(4/8): python2-crypto-2.6.1-13.amzn2.0.3.x86_64.rpm                                                                                                                                         | 476 kB  00:00:00     
+(5/8): python2-httplib2-0.18.1-3.amzn2.noarch.rpm                                                                                                                                           | 125 kB  00:00:00     
+(6/8): sshpass-1.06-1.amzn2.0.1.x86_64.rpm                                                                                                                                                  |  22 kB  00:00:00     
+(7/8): ansible-2.9.23-1.amzn2.noarch.rpm                                                                                                                                                    |  17 MB  00:00:00     
+warning: /var/cache/yum/x86_64/2/epel/packages/python-paramiko-2.1.1-0.10.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY===============================- ] 4.2 MB/s |  19 MB  00:00:00 ETA 
+Public key for python-paramiko-2.1.1-0.10.el7.noarch.rpm is not installed
+(8/8): python-paramiko-2.1.1-0.10.el7.noarch.rpm                                                                                                                                            | 269 kB  00:00:00     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               19 MB/s |  19 MB  00:00:01     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@amzn2extra-epel)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : sshpass-1.06-1.amzn2.0.1.x86_64                                                                                                                                                                 1/8 
+  Installing : python2-httplib2-0.18.1-3.amzn2.noarch                                                                                                                                                          2/8 
+  Installing : libtommath-1.0.1-4.amzn2.0.1.x86_64                                                                                                                                                             3/8 
+  Installing : libtomcrypt-1.18.2-1.amzn2.0.1.x86_64                                                                                                                                                           4/8 
+  Installing : python2-crypto-2.6.1-13.amzn2.0.3.x86_64                                                                                                                                                        5/8 
+  Installing : python-keyczar-0.71c-2.amzn2.noarch                                                                                                                                                             6/8 
+  Installing : python-paramiko-2.1.1-0.10.el7.noarch                                                                                                                                                           7/8 
+  Installing : ansible-2.9.23-1.amzn2.noarch                                                                                                                                                                   8/8 
+  Verifying  : python-paramiko-2.1.1-0.10.el7.noarch                                                                                                                                                           1/8 
+  Verifying  : python2-crypto-2.6.1-13.amzn2.0.3.x86_64                                                                                                                                                        2/8 
+  Verifying  : ansible-2.9.23-1.amzn2.noarch                                                                                                                                                                   3/8 
+  Verifying  : python-keyczar-0.71c-2.amzn2.noarch                                                                                                                                                             4/8 
+  Verifying  : libtomcrypt-1.18.2-1.amzn2.0.1.x86_64                                                                                                                                                           5/8 
+  Verifying  : libtommath-1.0.1-4.amzn2.0.1.x86_64                                                                                                                                                             6/8 
+  Verifying  : python2-httplib2-0.18.1-3.amzn2.noarch                                                                                                                                                          7/8 
+  Verifying  : sshpass-1.06-1.amzn2.0.1.x86_64                                                                                                                                                                 8/8 
+
+Installed:
+  ansible.noarch 0:2.9.23-1.amzn2                                                                                                                                                                                  
+
+Dependency Installed:
+  libtomcrypt.x86_64 0:1.18.2-1.amzn2.0.1    libtommath.x86_64 0:1.0.1-4.amzn2.0.1   python-keyczar.noarch 0:0.71c-2.amzn2   python-paramiko.noarch 0:2.1.1-0.10.el7   python2-crypto.x86_64 0:2.6.1-13.amzn2.0.3  
+  python2-httplib2.noarch 0:0.18.1-3.amzn2   sshpass.x86_64 0:1.06-1.amzn2.0.1      
+
+Complete!
+  0  ansible2=latest          enabled      \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel=latest              enabled      [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 39 †ruby2.6                  available    [ =2.6  =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-12-153 ~]# 
+[root@ip-172-31-12-153 ~]# amazon-linux-extras install ansible2 -y
+Installing ansible
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Cleaning repos: amzn2-core amzn2extra-ansible2 amzn2extra-docker amzn2extra-epel amzn2extra-kernel-5.10 epel
+34 metadata files removed
+12 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+amzn2extra-ansible2                                                                                                                                                                         | 3.0 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                           | 3.0 kB  00:00:00     
+amzn2extra-epel                                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                                      | 3.0 kB  00:00:00     
+epel/x86_64/metalink                                                                                                                                                                        | 4.7 kB  00:00:00     
+epel                                                                                                                                                                                        | 4.7 kB  00:00:00     
+(1/14): amzn2-core/2/x86_64/group_gz                                                                                                                                                        | 2.5 kB  00:00:00     
+(2/14): amzn2-core/2/x86_64/updateinfo                                                                                                                                                      | 583 kB  00:00:00     
+(3/14): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                               | 103 kB  00:00:00     
+(4/14): amzn2extra-epel/2/x86_64/updateinfo                                                                                                                                                 |   76 B  00:00:00     
+(5/14): amzn2extra-epel/2/x86_64/primary_db                                                                                                                                                 | 1.8 kB  00:00:00     
+(6/14): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                          |  26 kB  00:00:00     
+(7/14): amzn2extra-ansible2/2/x86_64/primary_db                                                                                                                                             |  40 kB  00:00:00     
+(8/14): amzn2extra-ansible2/2/x86_64/updateinfo                                                                                                                                             |   76 B  00:00:00     
+(9/14): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                               | 8.0 kB  00:00:00     
+(10/14): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                         |  16 MB  00:00:00     
+(11/14): epel/x86_64/group_gz                                                                                                                                                               |  99 kB  00:00:00     
+(12/14): epel/x86_64/updateinfo                                                                                                                                                             | 1.0 MB  00:00:00     
+(13/14): epel/x86_64/primary_db                                                                                                                                                             | 7.0 MB  00:00:00     
+(14/14): amzn2-core/2/x86_64/primary_db                                                                                                                                                     |  70 MB  00:00:01     
+240 packages excluded due to repository priority protections
+Package ansible-2.9.23-1.amzn2.noarch already installed and latest version
+Nothing to do
+  0  ansible2=latest          enabled      \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel=latest              enabled      [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 39 †ruby2.6                  available    [ =2.6  =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-12-153 ~]# cd /etc/ansible
+[root@ip-172-31-12-153 ansible]# ls
+ansible.cfg  hosts  roles
+[root@ip-172-31-12-153 ansible]# host
+Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+            [-R number] [-m flag] hostname [server]
+       -a is equivalent to -v -t ANY
+       -c specifies query class for non-IN data
+       -C compares SOA records on authoritative nameservers
+       -d is equivalent to -v
+       -i IP6.INT reverse lookups
+       -l lists all hosts in a domain, using AXFR
+       -m set memory debugging flag (trace|record|usage)
+       -N changes the number of dots allowed before root lookup is done
+       -r disables recursive processing
+       -R specifies number of retries for UDP packets
+       -s a SERVFAIL response should stop query
+       -t specifies the query type
+       -T enables TCP/IP mode
+       -v enables verbose output
+       -V print version number and exit
+       -w specifies to wait forever for a reply
+       -W specifies how long to wait for a reply
+       -4 use IPv4 query transport only
+       -6 use IPv6 query transport only
+[root@ip-172-31-12-153 ansible]# hosts
+-bash: hosts: command not found
+[root@ip-172-31-12-153 ansible]# cd ~
+[root@ip-172-31-12-153 ~]# useradd devopsadmin
+[root@ip-172-31-12-153 ~]# chown -R devopsadmin:devopsadmin /etc/ansible
+[root@ip-172-31-12-153 ~]# su - devopsadmin
+[devopsadmin@ip-172-31-12-153 ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/devopsadmin/.ssh/id_rsa): 
+Created directory '/home/devopsadmin/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/devopsadmin/.ssh/id_rsa.
+Your public key has been saved in /home/devopsadmin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:j2Mt9S4KTI6xIgdYyVp53ZOH8s7OkFqzamdYbSPjoJY devopsadmin@ip-172-31-12-153.ap-south-1.compute.internal
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+| . o . . o       |
+|  * . o = .      |
+|.+ .   o o       |
+|+   . ..S .      |
+| .  .B+++= .     |
+|. ooo=O+B.o .    |
+| oE.oo+O o..     |
+| . .o+. +. ..    |
++----[SHA256]-----+
+[devopsadmin@ip-172-31-12-153 ~]$ 
