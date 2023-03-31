@@ -770,3 +770,83 @@ id_rsa  id_rsa.pub
 [devopsadmin@ip-172-31-41-128 .ssh]$ chmod 600 /home/devopsadmin/.ssh/authorized_keys
 [devopsadmin@ip-172-31-41-128 .ssh]$ chmod 700 /home/devopsadmin/.ssh
 [devopsadmin@ip-172-31-41-128 .ssh]$ 
+[devopsadmin@ip-172-31-41-128 .ssh]$ pwd
+/home/devopsadmin/.ssh
+[devopsadmin@ip-172-31-41-128 .ssh]$ cd ~
+[devopsadmin@ip-172-31-41-128 ~]$ pwd
+/home/devopsadmin
+[devopsadmin@ip-172-31-41-128 ~]$ cd .ssh/
+[devopsadmin@ip-172-31-41-128 .ssh]$ ls
+authorized_keys  id_rsa  id_rsa.pub
+[devopsadmin@ip-172-31-41-128 .ssh]$ cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAlM7VYjnkwLXmzB6j8nJyamSLupeRs1DhShBTDG2IwQFcAh91
+82xaFnafPNqlaUlC9fzGNUVGyoufLHMf9KmwzMKMKK4PVgmXvkEgGXmfPPewXfoU
+co3KpENR+88XVwTzHjtB5hwQfbIoEQ4vin/or09D54HGXimW1dnS+5M76uGh/dKc
+vv1lRhHuNRsYclOyUsJLaIdwYOr1Qfr3w0t140p2GXF3oQFa1uedcz6U6aNxFCMB
+M8Gc26Grh3aw/k1HOe0SU2MIs6l0QjP81czPjzEs70ljWiDbdYSPFdTzGhJh+bSi
+urPaqVgsIdrYDpCRZKu26OLn/wy7Y4irtih8hQIDAQABAoIBAHfO01RjYj6Z9blw
+DfWcmWv5idpwP/mMa+ayn/rIkas7SfXXmKKlIR8m4Gwhab4MIyJkIr0vCqD2qvAh
+vJ/Co7soA6qZAXX3ATpHuu1n04JFtbTkLORSLs3z+aTwhk0kig1UDmmTPN/GuaWJ
+s1MiSpgjDHvvK2QSvgNtfgXY9AvV5cTjl+tp4uzmCrT0TtZfBybrrkIpctn8ltr+
+E+hb3sHFF0DgXlVWUPwM66pjcJwC6KZqWTC75HnW7HaBVRDT/8ufXBLbjZnrUPnh
+/OX/KnIKYT5C2J+BJeOw0Nciuc7TxjEZ4DtCVmFKdDan/XWde/1OxkynyJ2UjgQg
+pO2gosECgYEAxVWePc2r0pY9UrMzYDnb0ln+uECMNUhthBhlEOWFDaHvV+/5SSoR
+FpGQ7gKNIkC/8UwfMyk02SEgpcrqd6zrd98wKclhnutDQt2Lr/AoNy2QNqEqOvVY
+fk1Hq6Bg1ABcBjxOfEcXbyPeFSF1KLX47Dhl9Oi4JwhXiSXtT6tjcRUCgYEAwQwL
+xJXzzXJjgujKTgS2AhHaWQxRgjH6jHwBrs7BV20unPEjYKqlEs5U6nMvuR5orhMd
+RfmQS6tthZ7TxOfI0/XmQEzqKp7+w8/MNrcTdZV+ibYWn8wU0yV/gTAWCZ6I1vCP
+VG90h/RELOCZIb8JSxokkHtrUaKCs6MWMdN7WbECgYAEI+K5CzqipXJN7OKUD0K0
+bBzzAq+uYoGhtt1P+HDNM2uRHcDOLyrCnXU7+SO65z7fsigpa6DnOVG1CMfYkPEz
+x6P8DHSW3/q+SWWn4FMHrVYMP19ic0lTBQ4O5MODTyqfGt7OrrMoKsl7CgOqQf8h
+/aDt/X/3ma40e246MK9abQKBgQCIEqic2iHu18mC9fnbwoBUtybUi9VMU1RLAAHj
+qQMpT+GCaIrKUZ5nwh6i36xs7R1WTkzdDQuD+wMJI6ob6lFp7rNs8YpBnq7vcSJ+
+Es/ZmxWFll8eJikrqAvXEQEHqMLF1u0A1EsspaYEiBAIdHLliDjrysMb2NQOMU+s
+sWgKEQKBgQDAuQnUhOTK8s/+9f5aUl0aCTTGQFrmvv+AgBxSb6ZxccbbUb6hpk4B
+S+MlMRpGgseHRjwZWbcBfCNNbMTAHZimTW0hTTvzcZBAo6dcPToCYiDeDi+MxjQ2
+rs9cxOMOnGwmUYKdyuf61hs4zJGBtEgbpfKUvTQsRlmvgtFzs49Z7A==
+-----END RSA PRIVATE KEY-----
+[devopsadmin@ip-172-31-41-128 .ssh]$ cd ~
+[devopsadmin@ip-172-31-41-128 ~]$ ls -a
+.  ..  authorized_keys  .bash_logout  .bash_profile  .bashrc  .ssh
+[devopsadmin@ip-172-31-41-128 ~]$ 
+[devopsadmin@ip-172-31-41-128 ~]$ ls -a
+.  ..  authorized_keys  .bash_logout  .bash_profile  .bashrc  .ssh
+[devopsadmin@ip-172-31-41-128 ~]$ maven --version
+-bash: maven: command not found
+[devopsadmin@ip-172-31-41-128 ~]$ exit
+logout
+[root@ip-172-31-41-128 ~]# maven --version
+-bash: maven: command not found
+[root@ip-172-31-41-128 ~]# sudo - devopsadmin
+sudo: -: command not found
+[root@ip-172-31-41-128 ~]# su - devopsadmin
+Last login: Fri Mar 31 12:34:49 UTC 2023 on pts/0
+[devopsadmin@ip-172-31-41-128 ~]$ cd /opt/maven/
+[devopsadmin@ip-172-31-41-128 maven]$ ls
+bin  boot  conf  lib  LICENSE  NOTICE  README.txt
+[devopsadmin@ip-172-31-41-128 maven]$ ma
+machinectl     mailq          mailq.postfix  make           makedb         man            mandb          manpath        mapfile        mapscrn        matchpathcon   
+[devopsadmin@ip-172-31-41-128 maven]$ maven --version
+-bash: maven: command not found
+[devopsadmin@ip-172-31-41-128 maven]$ maven version
+-bash: maven: command not found
+[devopsadmin@ip-172-31-41-128 maven]$ mvn --version
+-bash: mvn: command not found
+[devopsadmin@ip-172-31-41-128 maven]$ 
+[devopsadmin@ip-172-31-41-128 maven]$ 
+[devopsadmin@ip-172-31-41-128 maven]$ cd /maven/home
+-bash: cd: /maven/home: No such file or directory
+[devopsadmin@ip-172-31-41-128 maven]$ /opt/apache-maven-3.9.1/
+-bash: /opt/apache-maven-3.9.1/: Is a directory
+[devopsadmin@ip-172-31-41-128 maven]$ cd /opt
+[devopsadmin@ip-172-31-41-128 opt]$ ls
+apache-maven-3.9.1  aws  maven  rh
+[devopsadmin@ip-172-31-41-128 opt]$ cd /maven
+-bash: cd: /maven: No such file or directory
+[devopsadmin@ip-172-31-41-128 opt]$ maven/
+-bash: maven/: Is a directory
+[devopsadmin@ip-172-31-41-128 opt]$ ls
+apache-maven-3.9.1  aws  maven  rh
+[devopsadmin@ip-172-31-41-128 opt]$ cd apache-maven-3.9.1/
+[devopsadmin@ip-172-31-41-128 apache-maven-3.9.1]$ 
