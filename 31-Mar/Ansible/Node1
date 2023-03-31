@@ -1,0 +1,27 @@
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-15-127 ~]$ useradd ansibleadmin
+-bash: /usr/sbin/useradd: Permission denied
+[ec2-user@ip-172-31-15-127 ~]$ sudo -i
+[root@ip-172-31-15-127 ~]# useradd ansibleadmin
+[root@ip-172-31-15-127 ~]# passwd ansibleadmin
+Changing password for user ansibleadmin.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@ip-172-31-15-127 ~]# vi /etc/ssh/sshd_config
+[root@ip-172-31-15-127 ~]# service sshd reload
+Redirecting to /bin/systemctl reload sshd.service
+[root@ip-172-31-15-127 ~]# visudo
+[root@ip-172-31-15-127 ~]# su - ansibleadmin 
+[ansibleadmin@ip-172-31-15-127 ~]$ ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc
+[ansibleadmin@ip-172-31-15-127 ~]$ 
+
+
+
