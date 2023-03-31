@@ -685,3 +685,1269 @@ node1 | SUCCESS => {
 }
 [devopsadmin@ip-172-31-12-153 ~]$ 
 [devopsadmin@ip-172-31-12-153 ~]$ 
+
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-12-153 ~]$ amazon-linux-extras install epel -y
+You lack permissions to write to system configuration.  /etc/yum.repos.d/amzn2-extras.repo
+[ec2-user@ip-172-31-12-153 ~]$ sudo -i
+[root@ip-172-31-12-153 ~]# amazon-linux-extras install epel -y
+Installing epel-release
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-epel amzn2extra-kernel-5.10
+17 metadata files removed
+6 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                           | 3.0 kB  00:00:00     
+amzn2extra-epel                                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                                      | 3.0 kB  00:00:00     
+(1/9): amzn2-core/2/x86_64/group_gz                                                                                                                                                         | 2.5 kB  00:00:00     
+(2/9): amzn2-core/2/x86_64/updateinfo                                                                                                                                                       | 583 kB  00:00:00     
+(3/9): amzn2extra-epel/2/x86_64/primary_db                                                                                                                                                  | 1.8 kB  00:00:00     
+(4/9): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                           |  26 kB  00:00:00     
+(5/9): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                                | 103 kB  00:00:00     
+(6/9): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                                | 8.0 kB  00:00:00     
+(7/9): amzn2extra-epel/2/x86_64/updateinfo                                                                                                                                                  |   76 B  00:00:00     
+(8/9): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                           |  16 MB  00:00:00     
+(9/9): amzn2-core/2/x86_64/primary_db                                                                                                                                                       |  70 MB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-11 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                              Arch                                           Version                                         Repository                                               Size
+===================================================================================================================================================================================================================
+Installing:
+ epel-release                                         noarch                                         7-11                                            amzn2extra-epel                                          15 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package
+
+Total download size: 15 k
+Installed size: 24 k
+Downloading packages:
+epel-release-7-11.noarch.rpm                                                                                                                                                                |  15 kB  00:00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : epel-release-7-11.noarch                                                                                                                                                                        1/1 
+  Verifying  : epel-release-7-11.noarch                                                                                                                                                                        1/1 
+
+Installed:
+  epel-release.noarch 0:7-11                                                                                                                                                                                       
+
+Complete!
+  0  ansible2                 available    \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel=latest              enabled      [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 39 †ruby2.6                  available    [ =2.6  =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-12-153 ~]# amazon-linux-extras install ansible2 -y
+Installing ansible
+
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Existing lock /var/run/yum.pid: another copy is running as pid 3767.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 256 M RSS (548 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:06 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 287 M RSS (579 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:08 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 348 M RSS (641 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:10 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 337 M RSS (629 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:12 ago
+    State  : Running, pid: 3767
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory : 337 M RSS (629 MB VSZ)
+    Started: Fri Mar 31 16:27:12 2023 - 00:14 ago
+    State  : Running, pid: 3767
+Cleaning repos: amzn2-core amzn2extra-ansible2 amzn2extra-docker amzn2extra-epel amzn2extra-kernel-5.10 epel
+28 metadata files removed
+10 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+amzn2extra-ansible2                                                                                                                                                                         | 3.0 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                           | 3.0 kB  00:00:00     
+amzn2extra-epel                                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                                      | 3.0 kB  00:00:00     
+epel/x86_64/metalink                                                                                                                                                                        | 4.7 kB  00:00:00     
+epel                                                                                                                                                                                        | 4.7 kB  00:00:00     
+(1/14): amzn2-core/2/x86_64/group_gz                                                                                                                                                        | 2.5 kB  00:00:00     
+(2/14): amzn2-core/2/x86_64/updateinfo                                                                                                                                                      | 583 kB  00:00:00     
+(3/14): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                               | 103 kB  00:00:00     
+(4/14): amzn2extra-epel/2/x86_64/updateinfo                                                                                                                                                 |   76 B  00:00:00     
+(5/14): amzn2extra-epel/2/x86_64/primary_db                                                                                                                                                 | 1.8 kB  00:00:00     
+(6/14): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                          |  26 kB  00:00:00     
+(7/14): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                               | 8.0 kB  00:00:00     
+(8/14): amzn2extra-ansible2/2/x86_64/updateinfo                                                                                                                                             |   76 B  00:00:00     
+(9/14): amzn2extra-ansible2/2/x86_64/primary_db                                                                                                                                             |  40 kB  00:00:00     
+(10/14): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                         |  16 MB  00:00:00     
+(11/14): epel/x86_64/group_gz                                                                                                                                                               |  99 kB  00:00:00     
+(12/14): amzn2-core/2/x86_64/primary_db                                                                                                                                                     |  70 MB  00:00:01     
+(13/14): epel/x86_64/updateinfo                                                                                                                                                             | 1.0 MB  00:00:00     
+(14/14): epel/x86_64/primary_db                                                                                                                                                             | 7.0 MB  00:00:00     
+240 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package ansible.noarch 0:2.9.23-1.amzn2 will be installed
+--> Processing Dependency: sshpass for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-paramiko for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-keyczar for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-httplib2 for package: ansible-2.9.23-1.amzn2.noarch
+--> Processing Dependency: python-crypto for package: ansible-2.9.23-1.amzn2.noarch
+--> Running transaction check
+---> Package python-keyczar.noarch 0:0.71c-2.amzn2 will be installed
+---> Package python-paramiko.noarch 0:2.1.1-0.10.el7 will be installed
+---> Package python2-crypto.x86_64 0:2.6.1-13.amzn2.0.3 will be installed
+--> Processing Dependency: libtomcrypt.so.1()(64bit) for package: python2-crypto-2.6.1-13.amzn2.0.3.x86_64
+---> Package python2-httplib2.noarch 0:0.18.1-3.amzn2 will be installed
+---> Package sshpass.x86_64 0:1.06-1.amzn2.0.1 will be installed
+--> Running transaction check
+---> Package libtomcrypt.x86_64 0:1.18.2-1.amzn2.0.1 will be installed
+--> Processing Dependency: libtommath >= 1.0 for package: libtomcrypt-1.18.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: libtommath.so.1()(64bit) for package: libtomcrypt-1.18.2-1.amzn2.0.1.x86_64
+--> Running transaction check
+---> Package libtommath.x86_64 0:1.0.1-4.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                             Arch                                      Version                                                Repository                                              Size
+===================================================================================================================================================================================================================
+Installing:
+ ansible                                             noarch                                    2.9.23-1.amzn2                                         amzn2extra-ansible2                                     17 M
+Installing for dependencies:
+ libtomcrypt                                         x86_64                                    1.18.2-1.amzn2.0.1                                     amzn2extra-ansible2                                    409 k
+ libtommath                                          x86_64                                    1.0.1-4.amzn2.0.1                                      amzn2extra-ansible2                                     36 k
+ python-keyczar                                      noarch                                    0.71c-2.amzn2                                          amzn2extra-ansible2                                    218 k
+ python-paramiko                                     noarch                                    2.1.1-0.10.el7                                         epel                                                   269 k
+ python2-crypto                                      x86_64                                    2.6.1-13.amzn2.0.3                                     amzn2extra-ansible2                                    476 k
+ python2-httplib2                                    noarch                                    0.18.1-3.amzn2                                         amzn2extra-ansible2                                    125 k
+ sshpass                                             x86_64                                    1.06-1.amzn2.0.1                                       amzn2extra-ansible2                                     22 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package (+7 Dependent packages)
+
+Total download size: 19 M
+Installed size: 110 M
+Downloading packages:
+(1/8): libtomcrypt-1.18.2-1.amzn2.0.1.x86_64.rpm                                                                                                                                            | 409 kB  00:00:00     
+(2/8): libtommath-1.0.1-4.amzn2.0.1.x86_64.rpm                                                                                                                                              |  36 kB  00:00:00     
+(3/8): python-keyczar-0.71c-2.amzn2.noarch.rpm                                                                                                                                              | 218 kB  00:00:00     
+(4/8): python2-crypto-2.6.1-13.amzn2.0.3.x86_64.rpm                                                                                                                                         | 476 kB  00:00:00     
+(5/8): python2-httplib2-0.18.1-3.amzn2.noarch.rpm                                                                                                                                           | 125 kB  00:00:00     
+(6/8): sshpass-1.06-1.amzn2.0.1.x86_64.rpm                                                                                                                                                  |  22 kB  00:00:00     
+(7/8): ansible-2.9.23-1.amzn2.noarch.rpm                                                                                                                                                    |  17 MB  00:00:00     
+warning: /var/cache/yum/x86_64/2/epel/packages/python-paramiko-2.1.1-0.10.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY===============================- ] 4.2 MB/s |  19 MB  00:00:00 ETA 
+Public key for python-paramiko-2.1.1-0.10.el7.noarch.rpm is not installed
+(8/8): python-paramiko-2.1.1-0.10.el7.noarch.rpm                                                                                                                                            | 269 kB  00:00:00     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               19 MB/s |  19 MB  00:00:01     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@amzn2extra-epel)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : sshpass-1.06-1.amzn2.0.1.x86_64                                                                                                                                                                 1/8 
+  Installing : python2-httplib2-0.18.1-3.amzn2.noarch                                                                                                                                                          2/8 
+  Installing : libtommath-1.0.1-4.amzn2.0.1.x86_64                                                                                                                                                             3/8 
+  Installing : libtomcrypt-1.18.2-1.amzn2.0.1.x86_64                                                                                                                                                           4/8 
+  Installing : python2-crypto-2.6.1-13.amzn2.0.3.x86_64                                                                                                                                                        5/8 
+  Installing : python-keyczar-0.71c-2.amzn2.noarch                                                                                                                                                             6/8 
+  Installing : python-paramiko-2.1.1-0.10.el7.noarch                                                                                                                                                           7/8 
+  Installing : ansible-2.9.23-1.amzn2.noarch                                                                                                                                                                   8/8 
+  Verifying  : python-paramiko-2.1.1-0.10.el7.noarch                                                                                                                                                           1/8 
+  Verifying  : python2-crypto-2.6.1-13.amzn2.0.3.x86_64                                                                                                                                                        2/8 
+  Verifying  : ansible-2.9.23-1.amzn2.noarch                                                                                                                                                                   3/8 
+  Verifying  : python-keyczar-0.71c-2.amzn2.noarch                                                                                                                                                             4/8 
+  Verifying  : libtomcrypt-1.18.2-1.amzn2.0.1.x86_64                                                                                                                                                           5/8 
+  Verifying  : libtommath-1.0.1-4.amzn2.0.1.x86_64                                                                                                                                                             6/8 
+  Verifying  : python2-httplib2-0.18.1-3.amzn2.noarch                                                                                                                                                          7/8 
+  Verifying  : sshpass-1.06-1.amzn2.0.1.x86_64                                                                                                                                                                 8/8 
+
+Installed:
+  ansible.noarch 0:2.9.23-1.amzn2                                                                                                                                                                                  
+
+Dependency Installed:
+  libtomcrypt.x86_64 0:1.18.2-1.amzn2.0.1    libtommath.x86_64 0:1.0.1-4.amzn2.0.1   python-keyczar.noarch 0:0.71c-2.amzn2   python-paramiko.noarch 0:2.1.1-0.10.el7   python2-crypto.x86_64 0:2.6.1-13.amzn2.0.3  
+  python2-httplib2.noarch 0:0.18.1-3.amzn2   sshpass.x86_64 0:1.06-1.amzn2.0.1      
+
+Complete!
+  0  ansible2=latest          enabled      \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel=latest              enabled      [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 39 †ruby2.6                  available    [ =2.6  =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-12-153 ~]# 
+[root@ip-172-31-12-153 ~]# amazon-linux-extras install ansible2 -y
+Installing ansible
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Cleaning repos: amzn2-core amzn2extra-ansible2 amzn2extra-docker amzn2extra-epel amzn2extra-kernel-5.10 epel
+34 metadata files removed
+12 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+amzn2extra-ansible2                                                                                                                                                                         | 3.0 kB  00:00:00     
+amzn2extra-docker                                                                                                                                                                           | 3.0 kB  00:00:00     
+amzn2extra-epel                                                                                                                                                                             | 3.0 kB  00:00:00     
+amzn2extra-kernel-5.10                                                                                                                                                                      | 3.0 kB  00:00:00     
+epel/x86_64/metalink                                                                                                                                                                        | 4.7 kB  00:00:00     
+epel                                                                                                                                                                                        | 4.7 kB  00:00:00     
+(1/14): amzn2-core/2/x86_64/group_gz                                                                                                                                                        | 2.5 kB  00:00:00     
+(2/14): amzn2-core/2/x86_64/updateinfo                                                                                                                                                      | 583 kB  00:00:00     
+(3/14): amzn2extra-docker/2/x86_64/primary_db                                                                                                                                               | 103 kB  00:00:00     
+(4/14): amzn2extra-epel/2/x86_64/updateinfo                                                                                                                                                 |   76 B  00:00:00     
+(5/14): amzn2extra-epel/2/x86_64/primary_db                                                                                                                                                 | 1.8 kB  00:00:00     
+(6/14): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                                                          |  26 kB  00:00:00     
+(7/14): amzn2extra-ansible2/2/x86_64/primary_db                                                                                                                                             |  40 kB  00:00:00     
+(8/14): amzn2extra-ansible2/2/x86_64/updateinfo                                                                                                                                             |   76 B  00:00:00     
+(9/14): amzn2extra-docker/2/x86_64/updateinfo                                                                                                                                               | 8.0 kB  00:00:00     
+(10/14): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                                                         |  16 MB  00:00:00     
+(11/14): epel/x86_64/group_gz                                                                                                                                                               |  99 kB  00:00:00     
+(12/14): epel/x86_64/updateinfo                                                                                                                                                             | 1.0 MB  00:00:00     
+(13/14): epel/x86_64/primary_db                                                                                                                                                             | 7.0 MB  00:00:00     
+(14/14): amzn2-core/2/x86_64/primary_db                                                                                                                                                     |  70 MB  00:00:01     
+240 packages excluded due to repository priority protections
+Package ansible-2.9.23-1.amzn2.noarch already installed and latest version
+Nothing to do
+  0  ansible2=latest          enabled      \
+        [ =2.4.2  =2.4.6  =2.8  =stable ]
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  6  postgresql10             available    [ =10  =stable ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20  docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23  tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel=latest              enabled      [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27  corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 29  golang1.11               available    \
+        [ =1.11.3  =1.11.11  =1.11.13  =stable ]
+ 30  squid4                   available    [ =4  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33  java-openjdk11           available    [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 39 †ruby2.6                  available    [ =2.6  =stable ]
+ 40  mock                     available    [ =stable ]
+ 41  postgresql11             available    [ =11  =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44  python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 51  php8.0                   available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54  mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57  ruby3.0                  available    [ =stable ]
+ 58  postgresql12             available    [ =stable ]
+ 59  postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63  postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66  php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68  php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-12-153 ~]# cd /etc/ansible
+[root@ip-172-31-12-153 ansible]# ls
+ansible.cfg  hosts  roles
+[root@ip-172-31-12-153 ansible]# host
+Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+            [-R number] [-m flag] hostname [server]
+       -a is equivalent to -v -t ANY
+       -c specifies query class for non-IN data
+       -C compares SOA records on authoritative nameservers
+       -d is equivalent to -v
+       -i IP6.INT reverse lookups
+       -l lists all hosts in a domain, using AXFR
+       -m set memory debugging flag (trace|record|usage)
+       -N changes the number of dots allowed before root lookup is done
+       -r disables recursive processing
+       -R specifies number of retries for UDP packets
+       -s a SERVFAIL response should stop query
+       -t specifies the query type
+       -T enables TCP/IP mode
+       -v enables verbose output
+       -V print version number and exit
+       -w specifies to wait forever for a reply
+       -W specifies how long to wait for a reply
+       -4 use IPv4 query transport only
+       -6 use IPv6 query transport only
+[root@ip-172-31-12-153 ansible]# hosts
+-bash: hosts: command not found
+[root@ip-172-31-12-153 ansible]# cd ~
+[root@ip-172-31-12-153 ~]# useradd devopsadmin
+[root@ip-172-31-12-153 ~]# chown -R devopsadmin:devopsadmin /etc/ansible
+[root@ip-172-31-12-153 ~]# su - devopsadmin
+[devopsadmin@ip-172-31-12-153 ~]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/devopsadmin/.ssh/id_rsa): 
+Created directory '/home/devopsadmin/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/devopsadmin/.ssh/id_rsa.
+Your public key has been saved in /home/devopsadmin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:j2Mt9S4KTI6xIgdYyVp53ZOH8s7OkFqzamdYbSPjoJY devopsadmin@ip-172-31-12-153.ap-south-1.compute.internal
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+| . o . . o       |
+|  * . o = .      |
+|.+ .   o o       |
+|+   . ..S .      |
+| .  .B+++= .     |
+|. ooo=O+B.o .    |
+| oE.oo+O o..     |
+| . .o+. +. ..    |
++----[SHA256]-----+
+[devopsadmin@ip-172-31-12-153 ~]$ 
+[devopsadmin@ip-172-31-12-153 ~]$ ssh-copy-id ansibleadmin@172.31.15.127
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/devopsadmin/.ssh/id_rsa.pub"
+The authenticity of host '172.31.15.127 (172.31.15.127)' can't be established.
+ECDSA key fingerprint is SHA256:zBOU/+rdeyCCmSH1Em9+Rimy6kBSQ5agvxSGdGt3fSY.
+ECDSA key fingerprint is MD5:c3:9e:51:7a:ef:63:5a:bf:e5:40:c2:7b:93:f2:f9:d4.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+ansibleadmin@172.31.15.127's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'ansibleadmin@172.31.15.127'"
+and check to make sure that only the key(s) you wanted were added.
+
+[devopsadmin@ip-172-31-12-153 ~]$ ssh ansibleadmin@172.31.15.127
+Last login: Fri Mar 31 16:24:57 2023
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ansibleadmin@ip-172-31-15-127 ~]$ vi etc/ansible/host
+[ansibleadmin@ip-172-31-15-127 ~]$ cd etc/ansible
+-bash: cd: etc/ansible: No such file or directory
+[ansibleadmin@ip-172-31-15-127 ~]$ exit
+logout
+Connection to 172.31.15.127 closed.
+[devopsadmin@ip-172-31-12-153 ~]$ cd etc/ansible
+-bash: cd: etc/ansible: No such file or directory
+[devopsadmin@ip-172-31-12-153 ~]$ cd /etc
+[devopsadmin@ip-172-31-12-153 etc]$ ls
+acpi               cifs-utils               dracut.conf         grub2-efi.cfg        iproute2        machine-id         openldap        python            rwtab          statetab.d          update-motd.d
+adjtime            cloud                    dracut.conf.d       grub.d               issue           magic              opt             rc0.d             rwtab.d        subgid              vimrc
+aliases            cron.d                   e2fsck.conf         gshadow              issue.net       man_db.conf        os-release      rc1.d             sasl2          subuid              virc
+aliases.db         cron.daily               environment         gshadow-             krb5.conf       mke2fs.conf        pam.d           rc2.d             scl            sudo.conf           wgetrc
+alternatives       cron.deny                ethertypes          gss                  krb5.conf.d     modprobe.d         passwd          rc3.d             screenrc       sudoers             X11
+amazon             cron.hourly              exports             gssproxy             ld.so.cache     modules-load.d     passwd-         rc4.d             securetty      sudoers.d           xdg
+anacrontab         cron.monthly             exports.d           hibagent-config.cfg  ld.so.conf      motd               pkcs11          rc5.d             security       sudo-ldap.conf      xinetd.d
+ansible            crontab                  filesystems         hibinit-config.cfg   ld.so.conf.d    mtab               pki             rc6.d             selinux        sysconfig           yum
+at.deny            cron.weekly              fstab               host.conf            libaudit.conf   my.cnf             plymouth        rc.d              services       sysctl.conf         yum.conf
+audisp             csh.cshrc                gcrypt              hostname             libnl           my.cnf.d           pm              rc.local          sestatus.conf  sysctl.d            yum.repos.d
+audit              csh.login                GeoIP.conf          hosts                libuser.conf    nanorc             popt.d          request-key.conf  setuptool.d    systemd
+bash_completion.d  dbus-1                   GeoIP.conf.default  hosts.allow          locale.conf     netconfig          postfix         request-key.d     shadow         system-release
+bashrc             default                  gnupg               hosts.deny           localtime       NetworkManager     ppp             resolv.conf       shadow-        system-release-cpe
+binfmt.d           depmod.d                 GREP_COLORS         idmapd.conf          login.defs      networks           prelink.conf.d  rpc               shells         terminfo
+chkconfig.d        dhcp                     groff               image-id             logrotate.conf  nfs.conf           printcap        rpm               skel           tmpfiles.d
+chrony.conf        DIR_COLORS               group               init.d               logrotate.d     nfsmount.conf      profile         rsyncd.conf       ssh            trusted-key.key
+chrony.d           DIR_COLORS.256color      group-              inittab              lsm             nsswitch.conf      profile.d       rsyslog.conf      ssl            udev
+chrony.keys        DIR_COLORS.lightbgcolor  grub2.cfg           inputrc              lvm             nsswitch.conf.bak  protocols       rsyslog.d         statetab       updatedb.conf
+[devopsadmin@ip-172-31-12-153 etc]$ ansible
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+ansible: error: too few arguments
+[devopsadmin@ip-172-31-12-153 etc]$ cd ansible/
+[devopsadmin@ip-172-31-12-153 ansible]$ ls
+ansible.cfg  hosts  roles
+[devopsadmin@ip-172-31-12-153 ansible]$ hosts
+-bash: hosts: command not found
+[devopsadmin@ip-172-31-12-153 ansible]$ cat hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+
+[devopsadmin@ip-172-31-12-153 ansible]$ ^C
+[devopsadmin@ip-172-31-12-153 ansible]$ ^C
+[devopsadmin@ip-172-31-12-153 ansible]$ vi etc/ansible/host
+[devopsadmin@ip-172-31-12-153 ansible]$ cat hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+## 
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+
+[devopsadmin@ip-172-31-12-153 ansible]$ vi hosts 
+[devopsadmin@ip-172-31-12-153 ansible]$ 
+[devopsadmin@ip-172-31-12-153 ansible]$ 
+[devopsadmin@ip-172-31-12-153 ansible]$ cd ~
+[devopsadmin@ip-172-31-12-153 ~]$ ansible testnodes -m ping
+[WARNING]: Platform linux on host node1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+node1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+[devopsadmin@ip-172-31-12-153 ~]$ 
+[devopsadmin@ip-172-31-12-153 ~]$
+
+
+[devopsadmin@ip-172-31-12-153 ~]$ $ansible node1 -m setup
+-bash: node1: command not found
+[devopsadmin@ip-172-31-12-153 ~]$ ansible node1 -m setup
+[WARNING]: Platform linux on host node1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+node1 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.31.15.127"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::882:a8ff:fe88:e88a"
+        ], 
+        "ansible_apparmor": {
+            "status": "disabled"
+        }, 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "08/24/2006", 
+        "ansible_bios_version": "4.11.amazon", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-5.10.173-154.642.amzn2.x86_64", 
+            "biosdevname": "0", 
+            "console": "ttyS0,115200n8", 
+            "net.ifnames": "0", 
+            "nvme_core.io_timeout": "4294967295", 
+            "rd.emergency": "poweroff", 
+            "rd.shell": "0", 
+            "ro": true, 
+            "root": "UUID=80b3e64c-379e-4297-a6a1-356635495cfc"
+        }, 
+        "ansible_date_time": {
+            "date": "2023-03-31", 
+            "day": "31", 
+            "epoch": "1680281146", 
+            "hour": "16", 
+            "iso8601": "2023-03-31T16:45:46Z", 
+            "iso8601_basic": "20230331T164546487979", 
+            "iso8601_basic_short": "20230331T164546", 
+            "iso8601_micro": "2023-03-31T16:45:46.487979Z", 
+            "minute": "45", 
+            "month": "03", 
+            "second": "46", 
+            "time": "16:45:46", 
+            "tz": "UTC", 
+            "tz_offset": "+0000", 
+            "weekday": "Friday", 
+            "weekday_number": "5", 
+            "weeknumber": "13", 
+            "year": "2023"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "172.31.15.127", 
+            "alias": "eth0", 
+            "broadcast": "172.31.15.255", 
+            "gateway": "172.31.0.1", 
+            "interface": "eth0", 
+            "macaddress": "0a:82:a8:88:e8:8a", 
+            "mtu": 9001, 
+            "netmask": "255.255.240.0", 
+            "network": "172.31.0.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_device_links": {
+            "ids": {}, 
+            "labels": {
+                "xvda1": [
+                    "\\x2f"
+                ]
+            }, 
+            "masters": {}, 
+            "uuids": {
+                "xvda1": [
+                    "80b3e64c-379e-4297-a6a1-356635495cfc"
+                ]
+            }
+        }, 
+        "ansible_devices": {
+            "xvda": {
+                "holders": [], 
+                "host": "", 
+                "links": {
+                    "ids": [], 
+                    "labels": [], 
+                    "masters": [], 
+                    "uuids": []
+                }, 
+                "model": null, 
+                "partitions": {
+                    "xvda1": {
+                        "holders": [], 
+                        "links": {
+                            "ids": [], 
+                            "labels": [
+                                "\\x2f"
+                            ], 
+                            "masters": [], 
+                            "uuids": [
+                                "80b3e64c-379e-4297-a6a1-356635495cfc"
+                            ]
+                        }, 
+                        "sectors": "16773087", 
+                        "sectorsize": 512, 
+                        "size": "8.00 GB", 
+                        "start": "4096", 
+                        "uuid": "80b3e64c-379e-4297-a6a1-356635495cfc"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "0", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "mq-deadline", 
+                "sectors": "16777216", 
+                "sectorsize": "512", 
+                "size": "8.00 GB", 
+                "support_discard": "0", 
+                "vendor": null, 
+                "virtual": 1
+            }
+        }, 
+        "ansible_distribution": "Amazon", 
+        "ansible_distribution_file_parsed": true, 
+        "ansible_distribution_file_path": "/etc/system-release", 
+        "ansible_distribution_file_variety": "Amazon", 
+        "ansible_distribution_major_version": "2", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "2", 
+        "ansible_dns": {
+            "nameservers": [
+                "172.31.0.2"
+            ], 
+            "options": {
+                "attempts": "5", 
+                "timeout": "2"
+            }, 
+            "search": [
+                "ap-south-1.compute.internal"
+            ]
+        }, 
+        "ansible_domain": "ap-south-1.compute.internal", 
+        "ansible_effective_group_id": 1001, 
+        "ansible_effective_user_id": 1001, 
+        "ansible_env": {
+            "HOME": "/home/ansibleadmin", 
+            "LANG": "en_US.UTF-8", 
+            "LESSOPEN": "||/usr/bin/lesspipe.sh %s", 
+            "LOGNAME": "ansibleadmin", 
+            "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:", 
+            "MAIL": "/var/mail/ansibleadmin", 
+            "PATH": "/usr/local/bin:/usr/bin", 
+            "PWD": "/home/ansibleadmin", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "2", 
+            "SSH_CLIENT": "172.31.12.153 45588 22", 
+            "SSH_CONNECTION": "172.31.12.153 45588 172.31.15.127 22", 
+            "SSH_TTY": "/dev/pts/1", 
+            "TERM": "xterm", 
+            "USER": "ansibleadmin", 
+            "XDG_RUNTIME_DIR": "/run/user/1001", 
+            "XDG_SESSION_ID": "7", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_eth0": {
+            "active": true, 
+            "device": "eth0", 
+            "features": {
+                "esp_hw_offload": "off [fixed]", 
+                "esp_tx_csum_hw_offload": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "off [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "off [fixed]", 
+                "macsec_hw_offload": "off [fixed]", 
+                "netns_local": "off [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_gro_hw": "off [fixed]", 
+                "rx_gro_list": "off", 
+                "rx_udp_tunnel_port_offload": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tls_hw_record": "off [fixed]", 
+                "tls_hw_rx_offload": "off [fixed]", 
+                "tls_hw_tx_offload": "off [fixed]", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "off [fixed]", 
+                "tx_checksum_ipv4": "on [fixed]", 
+                "tx_checksum_ipv6": "on", 
+                "tx_checksum_sctp": "off [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_esp_segmentation": "off [fixed]", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_list": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "on [fixed]", 
+                "tx_ipxip4_segmentation": "off [fixed]", 
+                "tx_ipxip6_segmentation": "off [fixed]", 
+                "tx_lockless": "off [fixed]", 
+                "tx_nocache_copy": "off", 
+                "tx_scatter_gather": "on", 
+                "tx_scatter_gather_fraglist": "off [fixed]", 
+                "tx_sctp_segmentation": "off [fixed]", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "off [fixed]", 
+                "tx_tcp_mangleid_segmentation": "off", 
+                "tx_tcp_segmentation": "on", 
+                "tx_tunnel_remcsum_segmentation": "off [fixed]", 
+                "tx_udp_segmentation": "off [fixed]", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "off", 
+                "vlan_challenged": "off [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "172.31.15.127", 
+                "broadcast": "172.31.15.255", 
+                "netmask": "255.255.240.0", 
+                "network": "172.31.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::882:a8ff:fe88:e88a", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "0a:82:a8:88:e8:8a", 
+            "module": "xen_netfront", 
+            "mtu": 9001, 
+            "pciid": "vif-0", 
+            "promisc": false, 
+            "timestamping": [
+                "tx_software", 
+                "rx_software", 
+                "software"
+            ], 
+            "type": "ether"
+        }, 
+        "ansible_fibre_channel_wwn": [], 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Other", 
+        "ansible_fqdn": "ip-172-31-15-127.ap-south-1.compute.internal", 
+        "ansible_hostname": "ip-172-31-15-127", 
+        "ansible_hostnqn": "", 
+        "ansible_interfaces": [
+            "lo", 
+            "eth0"
+        ], 
+        "ansible_is_chroot": true, 
+        "ansible_iscsi_iqn": "", 
+        "ansible_kernel": "5.10.173-154.642.amzn2.x86_64", 
+        "ansible_kernel_version": "#1 SMP Wed Mar 15 00:26:42 UTC 2023", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {
+                "esp_hw_offload": "off [fixed]", 
+                "esp_tx_csum_hw_offload": "off [fixed]", 
+                "fcoe_mtu": "off [fixed]", 
+                "generic_receive_offload": "on", 
+                "generic_segmentation_offload": "on", 
+                "highdma": "on [fixed]", 
+                "hw_tc_offload": "off [fixed]", 
+                "l2_fwd_offload": "off [fixed]", 
+                "large_receive_offload": "off [fixed]", 
+                "loopback": "on [fixed]", 
+                "macsec_hw_offload": "off [fixed]", 
+                "netns_local": "on [fixed]", 
+                "ntuple_filters": "off [fixed]", 
+                "receive_hashing": "off [fixed]", 
+                "rx_all": "off [fixed]", 
+                "rx_checksumming": "on [fixed]", 
+                "rx_fcs": "off [fixed]", 
+                "rx_gro_hw": "off [fixed]", 
+                "rx_gro_list": "off", 
+                "rx_udp_tunnel_port_offload": "off [fixed]", 
+                "rx_vlan_filter": "off [fixed]", 
+                "rx_vlan_offload": "off [fixed]", 
+                "rx_vlan_stag_filter": "off [fixed]", 
+                "rx_vlan_stag_hw_parse": "off [fixed]", 
+                "scatter_gather": "on", 
+                "tcp_segmentation_offload": "on", 
+                "tls_hw_record": "off [fixed]", 
+                "tls_hw_rx_offload": "off [fixed]", 
+                "tls_hw_tx_offload": "off [fixed]", 
+                "tx_checksum_fcoe_crc": "off [fixed]", 
+                "tx_checksum_ip_generic": "on [fixed]", 
+                "tx_checksum_ipv4": "off [fixed]", 
+                "tx_checksum_ipv6": "off [fixed]", 
+                "tx_checksum_sctp": "on [fixed]", 
+                "tx_checksumming": "on", 
+                "tx_esp_segmentation": "off [fixed]", 
+                "tx_fcoe_segmentation": "off [fixed]", 
+                "tx_gre_csum_segmentation": "off [fixed]", 
+                "tx_gre_segmentation": "off [fixed]", 
+                "tx_gso_list": "off [fixed]", 
+                "tx_gso_partial": "off [fixed]", 
+                "tx_gso_robust": "off [fixed]", 
+                "tx_ipxip4_segmentation": "off [fixed]", 
+                "tx_ipxip6_segmentation": "off [fixed]", 
+                "tx_lockless": "on [fixed]", 
+                "tx_nocache_copy": "off [fixed]", 
+                "tx_scatter_gather": "on [fixed]", 
+                "tx_scatter_gather_fraglist": "on [fixed]", 
+                "tx_sctp_segmentation": "on", 
+                "tx_tcp6_segmentation": "on", 
+                "tx_tcp_ecn_segmentation": "on", 
+                "tx_tcp_mangleid_segmentation": "on", 
+                "tx_tcp_segmentation": "on", 
+                "tx_tunnel_remcsum_segmentation": "off [fixed]", 
+                "tx_udp_segmentation": "off [fixed]", 
+                "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                "tx_udp_tnl_segmentation": "off [fixed]", 
+                "tx_vlan_offload": "off [fixed]", 
+                "tx_vlan_stag_hw_insert": "off [fixed]", 
+                "udp_fragmentation_offload": "off", 
+                "vlan_challenged": "on [fixed]"
+            }, 
+            "hw_timestamp_filters": [], 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "timestamping": [
+                "tx_software", 
+                "rx_software", 
+                "software"
+            ], 
+            "type": "loopback"
+        }, 
+        "ansible_local": {}, 
+        "ansible_lsb": {}, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "a68e5c2721e14bdaa114bbceeecd770f", 
+        "ansible_memfree_mb": 303, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 840, 
+                "used": 112
+            }, 
+            "real": {
+                "free": 303, 
+                "total": 952, 
+                "used": 649
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 0, 
+                "total": 0, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 952, 
+        "ansible_mounts": [
+            {
+                "block_available": 1674433, 
+                "block_size": 4096, 
+                "block_total": 2094075, 
+                "block_used": 419642, 
+                "device": "/dev/xvda1", 
+                "fstype": "xfs", 
+                "inode_available": 4145200, 
+                "inode_total": 4193216, 
+                "inode_used": 48016, 
+                "mount": "/", 
+                "options": "rw,noatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", 
+                "size_available": 6858477568, 
+                "size_total": 8577331200, 
+                "uuid": "80b3e64c-379e-4297-a6a1-356635495cfc"
+            }
+        ], 
+        "ansible_nodename": "ip-172-31-15-127.ap-south-1.compute.internal", 
+        "ansible_os_family": "RedHat", 
+        "ansible_pkg_mgr": "yum", 
+        "ansible_proc_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-5.10.173-154.642.amzn2.x86_64", 
+            "biosdevname": "0", 
+            "console": [
+                "tty0", 
+                "ttyS0,115200n8"
+            ], 
+            "net.ifnames": "0", 
+            "nvme_core.io_timeout": "4294967295", 
+            "rd.emergency": "poweroff", 
+            "rd.shell": "0", 
+            "ro": true, 
+            "root": "UUID=80b3e64c-379e-4297-a6a1-356635495cfc"
+        }, 
+        "ansible_processor": [
+            "0", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+        ], 
+        "ansible_processor_cores": 1, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 1, 
+        "ansible_product_name": "HVM domU", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "4.11.amazon", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": "CPython", 
+            "version": {
+                "major": 2, 
+                "micro": 18, 
+                "minor": 7, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                2, 
+                7, 
+                18, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "2.7.18", 
+        "ansible_real_group_id": 1001, 
+        "ansible_real_user_id": 1001, 
+        "ansible_selinux": {
+            "status": "Missing selinux Python library"
+        }, 
+        "ansible_selinux_python_present": false, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIyplUj/HA1UMz3C13uBRpYzi3xfl3gxx2hqbScXji+lICjIrKhj1sup8n+RCTlnDKAGR2QgboB5TSvCepZEw8s=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIIbG6UMQ+tRdMMkJVEQsGbEmwToLfdYB3dCEWw8PiJqB", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCgrwZZml9QA89WNPxzkR3ch4jnGl6qqEfQipXeGsu+Jed1eMhrRjjgc4+VGuY8dONUnPOZVQSQBsCkATkhHZTwuJLDwjp8Cy6LC7Az8P422Rlw6B5j1SZHkUgaq79OQcldc496rg2nV4q5zJppQWDfNEOQI034R/pJX0w5YCU3tlSsF0Rw7rDTMxPwXzbOIzOJ1m3TJmkoRoQAtbbPmvtUJOo/qnJTBuvQfvEKEWMC87PxwcoL7eGrBUC771mMaSJkNwc41x6umI4NIZ/bnvxYRgyqszATwgk5CuKjdalpOmZVxXRoA2gYmkXdVLylpSztQdCcUfASF0qoUJXrAwxV", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            ""
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_system_vendor": "Xen", 
+        "ansible_uptime_seconds": 1476, 
+        "ansible_user_dir": "/home/ansibleadmin", 
+        "ansible_user_gecos": "", 
+        "ansible_user_gid": 1001, 
+        "ansible_user_id": "ansibleadmin", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 1001, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "guest", 
+        "ansible_virtualization_type": "xen", 
+        "discovered_interpreter_python": "/usr/bin/python", 
+        "gather_subset": [
+            "all"
+        ], 
+        "module_setup": true
+    }, 
+    "changed": false
+}
+[devopsadmin@ip-172-31-12-153 ~]$ ansible node1 -m shell -a "sleep 5; echo 'hi'"
+[WARNING]: Platform linux on host node1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+node1 | CHANGED | rc=0 >>
+hi
+[devopsadmin@ip-172-31-12-153 ~]$ 
+[devopsadmin@ip-172-31-12-153 ~]$ ansible-doc -l
+fortios_router_community_list                                 Configure community lists in Fortinet's FortiOS and FortiGate                                                                                   
+azure_rm_devtestlab_info                                      Get Azure DevTest Lab facts                                                                                                                     
+ecs_taskdefinition                                            register a task definition in ecs                                                                                                               
+avi_alertscriptconfig                                         Module for setup of AlertScriptConfig Avi RESTful Object                                                                                        
+tower_receive                                                 Receive assets from Ansible Tower                                                                                                               
+netapp_e_iscsi_target                                         NetApp E-Series manage iSCSI target configuration                                                                                               
+azure_rm_acs                                                  Manage an Azure Container Service(ACS) instance                                                                                                 
+fortios_log_syslogd2_filter                                   Filters for remote system server in Fortinet's FortiOS and FortiGate                                                                            
+junos_rpc                                                     Runs an arbitrary RPC over NetConf on an Juniper JUNOS device                                                                                   
+na_elementsw_vlan                                             NetApp Element Software Manage VLAN                                                                                                             
+pn_ospf                                                       CLI command to add/remove ospf protocol to a vRouter                                                                                            
+pn_snmp_vacm                                                  CLI command to create/modify/delete snmp-vacm                                                                                                   
+cp_mgmt_service_sctp                                          Manages service-sctp objects on Check Point over Web Services API                                                                               
+onyx_ospf                                                     Manage OSPF protocol on Mellanox ONYX network devices                                                                                           
+icx_command                                                   Run arbitrary commands on remote Ruckus ICX 7000 series switches                                                                                
+cs_snapshot_policy                                            Manages volume snapshot policies on Apache CloudStack based clouds                                                                              
+nxos_install_os                                               Set boot options like boot, kickstart image and issu                                                                                            
+cnos_static_route                                             Manage static IP routes on Lenovo CNOS network devices                                                                                          
+win_eventlog                                                  Manage Windows event logs                                                                                                                       
+vmware_category                                               Manage VMware categories                                                                                                                        
+vmware_host_feature_info                                      Gathers info about an ESXi host's feature capability information                                                                                
+avi_cluster                                                   Module for setup of Cluster Avi RESTful Object                                                                                                  
+na_ontap_user                                                 NetApp ONTAP user configuration and management                                                                                                  
+aci_l3out                                                     Manage Layer 3 Outside (L3Out) objects (l3ext:Out)                                                                                              
+memset_server_info                                            Retrieve server information                                                                                                                     
+gcp_compute_subnetwork_info                                   Gather info for GCP Subnetwork                                                                                                                  
+azure_rm_virtualmachinescalesetextension                      Manage Azure Virtual Machine Scale Set (VMSS) extensions                                                                                        
+fortios_report_dataset                                        Report dataset configuration in Fortinet's FortiOS and FortiGate                                                                                
+avi_api_session                                               Avi API Module                                                                                                                                  
+avi_networkprofile                                            Module for setup of NetworkProfile Avi RESTful Object                                                                                           
+avi_backup                                                    Module for setup of Backup Avi RESTful Object                                                                                                   
+aci_interface_policy_cdp                                      Manage CDP interface policies (cdp:IfPol)                                                                                                       
+fortios_firewall_vip                                          Configure virtual IP for IPv4 in Fortinet's FortiOS and FortiGate                                                                               
+gcp_compute_backend_service                                   Creates a GCP BackendService                                                                                                                    
+iam_policy                                                    Manage IAM policies for users, groups, and roles                                                                                                
+fortios_system_fips_cc                                        Configure FIPS-CC mode in Fortinet's FortiOS and FortiGate                                                                                      
+fortios_log_null_device_setting                               Settings for null device logging in Fortinet's FortiOS and FortiGate                                                                            
+win_inet_proxy                                                Manages proxy settings for WinINet and Internet Explorer                                                                                        
+fortios_firewall_auth_portal                                  Configure firewall authentication portals in Fortinet's FortiOS and FortiGate                                                                   
+jenkins_plugin                                                Add or remove Jenkins plugin                                                                                                                    
+iosxr_interfaces                                              Manage interface attributes on Cisco IOS-XR network devices                                                                                     
+supervisorctl                                                 Manage the state of a program or group of programs running via supervisord                                                                      
+tower_notification                                            create, update, or destroy Ansible Tower notification                                                                                           
+rax_cbs_attachments                                           Manipulate Rackspace Cloud Block Storage Volume Attachments                                                                                     
+oneview_san_manager_info                                      Retrieve information about one or more of the OneView SAN Managers                                                                              
+elb_classic_lb_info                                           Gather information about EC2 Elastic Load Balancers in AWS                                                                                      
+idrac_server_config_profile                                   Export or Import iDRAC Server Configuration Profile (SCP)                                                                                       
+influxdb_write                                                Write data points into InfluxDB                                                                                                                 
+[devopsadmin@ip-172-31-12-153 ~]$ 
+[devopsadmin@ip-172-31-12-153 ~]$ ansible-doc -l | wc -l
+3387
+[devopsadmin@ip-172-31-12-153 ~]$ 
+
+
+[devopsadmin@ip-172-31-12-153 ~]$ vi debug1.yaml
+[devopsadmin@ip-172-31-12-153 ~]$ ansible-playbook testfile.yaml --syntax-check
+ERROR! the playbook: testfile.yaml could not be found
+[devopsadmin@ip-172-31-12-153 ~]$ ansible-playbook debug1.yaml --syntax-check
+
+playbook: debug1.yaml
+[devopsadmin@ip-172-31-12-153 ~]$ ansible-playbook debug1.yaml
+
+PLAY [node1] ******************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+[WARNING]: Platform linux on host node1 is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change this. See
+https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information.
+ok: [node1]
+
+TASK [debug] ******************************************************************************************************************************************************************************************************
+ok: [node1] => {
+    "msg": [
+        "The os distribution is: Amazon", 
+        "The os name is: Linux", 
+        "The os family is: RedHat", 
+        "The mount points are :[{u'block_used': 419748, u'uuid': u'80b3e64c-379e-4297-a6a1-356635495cfc', u'size_total': 8577331200, u'block_total': 2094075, u'mount': u'/', u'block_available': 1674327, u'size_available': 6858043392, u'fstype': u'xfs', u'inode_total': 4193216, u'inode_available': 4145200, u'device': u'/dev/xvda1', u'inode_used': 48016, u'block_size': 4096, u'options': u'rw,noatime,attr2,inode64,logbufs=8,logbsize=32k,noquota'}]"
+    ]
+}
+
+PLAY RECAP ********************************************************************************************************************************************************************************************************
+node1                      : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+[devopsadmin@ip-172-31-12-153 ~]$ 
