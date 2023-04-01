@@ -1285,3 +1285,19 @@ Last login: Fri Mar 31 13:09:51 UTC 2023 on pts/0
 [devopsadmin@ip-172-31-42-196 ~]$ cd /opt/tomcat/webapps
 [devopsadmin@ip-172-31-42-196 webapps]$ ls
 docs  examples  host-manager  manager  ROOT
+
+
+[devopsadmin@ip-172-31-41-128 ~]$ ls
+authorized_keys  caches  remoting  remoting.jar  workspace
+[devopsadmin@ip-172-31-41-128 ~]$ cd workspace/
+[devopsadmin@ip-172-31-41-128 workspace]$ ls
+MyTest  MyTest@tmp
+[devopsadmin@ip-172-31-41-128 workspace]$ cd MyTest
+[devopsadmin@ip-172-31-41-128 MyTest]$ ls
+bin  Dockerfile  k8smvndeployment.yaml  LICENSE  nodePort.yaml  pom.xml  README.md  s1.txt  s2.txt  src  target
+[devopsadmin@ip-172-31-41-128 MyTest]$ cd target
+[devopsadmin@ip-172-31-41-128 target]$ ls
+generated-test-sources  maven-archiver  maven-status  mvn-hello-world  mvn-hello-world.war  surefire-reports  test-classes
+[devopsadmin@ip-172-31-41-128 target]$ pwd
+/home/devopsadmin/workspace/MyTest/target
+[devopsadmin@ip-172-31-41-128 target]$
