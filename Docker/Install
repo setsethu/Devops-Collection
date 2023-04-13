@@ -1,0 +1,292 @@
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-10-82 ~]$ sudo -i
+[root@ip-172-31-10-82 ~]# yum update -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+No packages marked for update
+[root@ip-172-31-10-82 ~]# sudo yum install docker
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:20.10.17-1.amzn2.0.2 will be installed
+--> Processing Dependency: runc >= 1.0.0 for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Processing Dependency: libcgroup >= 0.40.rc1-5.15 for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Processing Dependency: containerd >= 1.3.2 for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Processing Dependency: pigz for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.6.8-2.amzn2.0.1 will be installed
+---> Package libcgroup.x86_64 0:0.41-21.amzn2 will be installed
+---> Package pigz.x86_64 0:2.3.4-1.amzn2.0.1 will be installed
+---> Package runc.x86_64 0:1.1.4-1.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                        Arch                                       Version                                                     Repository                                             Size
+===================================================================================================================================================================================================================
+Installing:
+ docker                                         x86_64                                     20.10.17-1.amzn2.0.2                                        amzn2extra-docker                                      39 M
+Installing for dependencies:
+ containerd                                     x86_64                                     1.6.8-2.amzn2.0.1                                           amzn2extra-docker                                      27 M
+ libcgroup                                      x86_64                                     0.41-21.amzn2                                               amzn2-core                                             66 k
+ pigz                                           x86_64                                     2.3.4-1.amzn2.0.1                                           amzn2-core                                             81 k
+ runc                                           x86_64                                     1.1.4-1.amzn2.0.1                                           amzn2extra-docker                                     2.9 M
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 69 M
+Installed size: 260 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/5): libcgroup-0.41-21.amzn2.x86_64.rpm                                                                                                                                                   |  66 kB  00:00:00     
+(2/5): pigz-2.3.4-1.amzn2.0.1.x86_64.rpm                                                                                                                                                    |  81 kB  00:00:00     
+(3/5): containerd-1.6.8-2.amzn2.0.1.x86_64.rpm                                                                                                                                              |  27 MB  00:00:00     
+(4/5): docker-20.10.17-1.amzn2.0.2.x86_64.rpm                                                                                                                                               |  39 MB  00:00:00     
+(5/5): runc-1.1.4-1.amzn2.0.1.x86_64.rpm                                                                                                                                                    | 2.9 MB  00:00:00     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               84 MB/s |  69 MB  00:00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : runc-1.1.4-1.amzn2.0.1.x86_64                                                                                                                                                                   1/5 
+  Installing : containerd-1.6.8-2.amzn2.0.1.x86_64                                                                                                                                                             2/5 
+  Installing : libcgroup-0.41-21.amzn2.x86_64                                                                                                                                                                  3/5 
+  Installing : pigz-2.3.4-1.amzn2.0.1.x86_64                                                                                                                                                                   4/5 
+  Installing : docker-20.10.17-1.amzn2.0.2.x86_64                                                                                                                                                              5/5 
+  Verifying  : containerd-1.6.8-2.amzn2.0.1.x86_64                                                                                                                                                             1/5 
+  Verifying  : pigz-2.3.4-1.amzn2.0.1.x86_64                                                                                                                                                                   2/5 
+  Verifying  : libcgroup-0.41-21.amzn2.x86_64                                                                                                                                                                  3/5 
+  Verifying  : docker-20.10.17-1.amzn2.0.2.x86_64                                                                                                                                                              4/5 
+  Verifying  : runc-1.1.4-1.amzn2.0.1.x86_64                                                                                                                                                                   5/5 
+
+Installed:
+  docker.x86_64 0:20.10.17-1.amzn2.0.2                                                                                                                                                                             
+
+Dependency Installed:
+  containerd.x86_64 0:1.6.8-2.amzn2.0.1                   libcgroup.x86_64 0:0.41-21.amzn2                   pigz.x86_64 0:2.3.4-1.amzn2.0.1                   runc.x86_64 0:1.1.4-1.amzn2.0.1                  
+
+Complete!
+[root@ip-172-31-10-82 ~]# docker version
+Client:
+ Version:           20.10.17
+ API version:       1.41
+ Go version:        go1.18.6
+ Git commit:        100c701
+ Built:             Sat Dec  3 04:13:49 2022
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-10-82 ~]# 
+[root@ip-172-31-10-82 ~]# docker version
+Client:
+ Version:           20.10.17
+ API version:       1.41
+ Go version:        go1.18.6
+ Git commit:        100c701
+ Built:             Sat Dec  3 04:13:49 2022
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-10-82 ~]# docker version
+Client:
+ Version:           20.10.17
+ API version:       1.41
+ Go version:        go1.18.6
+ Git commit:        100c701
+ Built:             Sat Dec  3 04:13:49 2022
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[root@ip-172-31-10-82 ~]# systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: https://docs.docker.com
+[root@ip-172-31-10-82 ~]# systemctl start docker
+[root@ip-172-31-10-82 ~]# systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Thu 2023-04-13 08:38:26 UTC; 8s ago
+     Docs: https://docs.docker.com
+  Process: 3857 ExecStartPre=/usr/libexec/docker/docker-setup-runtimes.sh (code=exited, status=0/SUCCESS)
+  Process: 3856 ExecStartPre=/bin/mkdir -p /run/docker (code=exited, status=0/SUCCESS)
+ Main PID: 3860 (dockerd)
+    Tasks: 7
+   Memory: 20.8M
+   CGroup: /system.slice/docker.service
+           └─3860 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock --default-ulimit nofile=32768:65536
+
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.397515659Z" level=info msg="ClientConn switching balancer to \"pick_first\"" module=grpc
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.529194955Z" level=warning msg="Your kernel does not support cgroup blkio weight"
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.529674461Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.530148253Z" level=info msg="Loading containers: start."
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.734092747Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/1...IP address"
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.788668625Z" level=info msg="Loading containers: done."
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.806981067Z" level=info msg="Docker daemon" commit=a89b842 graphdriver(s)=overlay2 version=20.10.17
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.807417038Z" level=info msg="Daemon has completed initialization"
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal systemd[1]: Started Docker Application Container Engine.
+Apr 13 08:38:26 ip-172-31-10-82.ap-south-1.compute.internal dockerd[3860]: time="2023-04-13T08:38:26.831706037Z" level=info msg="API listen on /run/docker.sock"
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@ip-172-31-10-82 ~]# systemctl enable docker
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+[root@ip-172-31-10-82 ~]# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[root@ip-172-31-10-82 ~]# ls
+[root@ip-172-31-10-82 ~]# ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc  .cshrc  .ssh  .tcshrc
+[root@ip-172-31-10-82 ~]# cd /etc
+[root@ip-172-31-10-82 etc]# ls
+acpi               cifs-utils    DIR_COLORS               gnupg                hosts.allow    libuser.conf    my.cnf.d           plymouth        rc6.d             security       sudoers.d           X11
+adjtime            cloud         DIR_COLORS.256color      GREP_COLORS          hosts.deny     locale.conf     nanorc             pm              rc.d              selinux        sudo-ldap.conf      xdg
+aliases            cni           DIR_COLORS.lightbgcolor  groff                idmapd.conf    localtime       netconfig          popt.d          rc.local          services       sysconfig           xinetd.d
+aliases.db         containerd    docker                   group                image-id       login.defs      NetworkManager     postfix         request-key.conf  sestatus.conf  sysctl.conf         yum
+alternatives       cron.d        docker-runtimes.d        group-               init.d         logrotate.conf  networks           ppp             request-key.d     setuptool.d    sysctl.d            yum.conf
+amazon             cron.daily    dracut.conf              grub2.cfg            inittab        logrotate.d     nfs.conf           prelink.conf.d  resolv.conf       shadow         systemd             yum.repos.d
+anacrontab         cron.deny     dracut.conf.d            grub2-efi.cfg        inputrc        lsm             nfsmount.conf      printcap        rpc               shadow-        system-release
+at.deny            cron.hourly   e2fsck.conf              grub.d               iproute2       lvm             nsswitch.conf      profile         rpm               shells         system-release-cpe
+audisp             cron.monthly  environment              gshadow              issue          machine-id      nsswitch.conf.bak  profile.d       rsyncd.conf       skel           terminfo
+audit              crontab       ethertypes               gshadow-             issue.net      magic           openldap           protocols       rsyslog.conf      ssh            tmpfiles.d
+bash_completion.d  cron.weekly   exports                  gss                  krb5.conf      man_db.conf     opt                python          rsyslog.d         ssl            trusted-key.key
+bashrc             csh.cshrc     exports.d                gssproxy             krb5.conf.d    mke2fs.conf     os-release         rc0.d           rwtab             statetab       udev
+binfmt.d           csh.login     filesystems              hibagent-config.cfg  ld.so.cache    modprobe.d      pam.d              rc1.d           rwtab.d           statetab.d     updatedb.conf
+chkconfig.d        dbus-1        fstab                    hibinit-config.cfg   ld.so.conf     modules-load.d  passwd             rc2.d           sasl2             subgid         update-motd.d
+chrony.conf        default       gcrypt                   host.conf            ld.so.conf.d   motd            passwd-            rc3.d           scl               subuid         vimrc
+chrony.d           depmod.d      GeoIP.conf               hostname             libaudit.conf  mtab            pkcs11             rc4.d           screenrc          sudo.conf      virc
+chrony.keys        dhcp          GeoIP.conf.default       hosts                libnl          my.cnf          pki                rc5.d           securetty         sudoers        wgetrc
+[root@ip-172-31-10-82 etc]# git clone https://github.com/edurekacontent/dockerContent.git
+-bash: git: command not found
+[root@ip-172-31-10-82 etc]# yum install git
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                                                                  | 3.7 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package git.x86_64 0:2.39.2-1.amzn2.0.1 will be installed
+--> Processing Dependency: perl-Git = 2.39.2-1.amzn2.0.1 for package: git-2.39.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: git-core-doc = 2.39.2-1.amzn2.0.1 for package: git-2.39.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: git-core = 2.39.2-1.amzn2.0.1 for package: git-2.39.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-2.39.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: perl(Git::I18N) for package: git-2.39.2-1.amzn2.0.1.x86_64
+--> Processing Dependency: perl(Git) for package: git-2.39.2-1.amzn2.0.1.x86_64
+--> Running transaction check
+---> Package git-core.x86_64 0:2.39.2-1.amzn2.0.1 will be installed
+---> Package git-core-doc.noarch 0:2.39.2-1.amzn2.0.1 will be installed
+---> Package perl-Git.noarch 0:2.39.2-1.amzn2.0.1 will be installed
+--> Processing Dependency: perl(Error) for package: perl-Git-2.39.2-1.amzn2.0.1.noarch
+---> Package perl-TermReadKey.x86_64 0:2.30-20.amzn2.0.2 will be installed
+--> Running transaction check
+---> Package perl-Error.noarch 1:0.17020-2.amzn2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                               Arch                                        Version                                                   Repository                                       Size
+===================================================================================================================================================================================================================
+Installing:
+ git                                                   x86_64                                      2.39.2-1.amzn2.0.1                                        amzn2-core                                       65 k
+Installing for dependencies:
+ git-core                                              x86_64                                      2.39.2-1.amzn2.0.1                                        amzn2-core                                      8.8 M
+ git-core-doc                                          noarch                                      2.39.2-1.amzn2.0.1                                        amzn2-core                                      3.0 M
+ perl-Error                                            noarch                                      1:0.17020-2.amzn2                                         amzn2-core                                       32 k
+ perl-Git                                              noarch                                      2.39.2-1.amzn2.0.1                                        amzn2-core                                       41 k
+ perl-TermReadKey                                      x86_64                                      2.30-20.amzn2.0.2                                         amzn2-core                                       31 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package (+5 Dependent packages)
+
+Total download size: 12 M
+Installed size: 43 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/6): git-2.39.2-1.amzn2.0.1.x86_64.rpm                                                                                                                                                    |  65 kB  00:00:00     
+(2/6): git-core-2.39.2-1.amzn2.0.1.x86_64.rpm                                                                                                                                               | 8.8 MB  00:00:00     
+(3/6): git-core-doc-2.39.2-1.amzn2.0.1.noarch.rpm                                                                                                                                           | 3.0 MB  00:00:00     
+(4/6): perl-Error-0.17020-2.amzn2.noarch.rpm                                                                                                                                                |  32 kB  00:00:00     
+(5/6): perl-Git-2.39.2-1.amzn2.0.1.noarch.rpm                                                                                                                                               |  41 kB  00:00:00     
+(6/6): perl-TermReadKey-2.30-20.amzn2.0.2.x86_64.rpm                                                                                                                                        |  31 kB  00:00:00     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               42 MB/s |  12 MB  00:00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : git-core-2.39.2-1.amzn2.0.1.x86_64                                                                                                                                                              1/6 
+  Installing : git-core-doc-2.39.2-1.amzn2.0.1.noarch                                                                                                                                                          2/6 
+  Installing : 1:perl-Error-0.17020-2.amzn2.noarch                                                                                                                                                             3/6 
+  Installing : perl-TermReadKey-2.30-20.amzn2.0.2.x86_64                                                                                                                                                       4/6 
+  Installing : perl-Git-2.39.2-1.amzn2.0.1.noarch                                                                                                                                                              5/6 
+  Installing : git-2.39.2-1.amzn2.0.1.x86_64                                                                                                                                                                   6/6 
+  Verifying  : perl-TermReadKey-2.30-20.amzn2.0.2.x86_64                                                                                                                                                       1/6 
+  Verifying  : perl-Git-2.39.2-1.amzn2.0.1.noarch                                                                                                                                                              2/6 
+  Verifying  : git-core-doc-2.39.2-1.amzn2.0.1.noarch                                                                                                                                                          3/6 
+  Verifying  : git-core-2.39.2-1.amzn2.0.1.x86_64                                                                                                                                                              4/6 
+  Verifying  : 1:perl-Error-0.17020-2.amzn2.noarch                                                                                                                                                             5/6 
+  Verifying  : git-2.39.2-1.amzn2.0.1.x86_64                                                                                                                                                                   6/6 
+
+Installed:
+  git.x86_64 0:2.39.2-1.amzn2.0.1                                                                                                                                                                                  
+
+Dependency Installed:
+  git-core.x86_64 0:2.39.2-1.amzn2.0.1    git-core-doc.noarch 0:2.39.2-1.amzn2.0.1    perl-Error.noarch 1:0.17020-2.amzn2    perl-Git.noarch 0:2.39.2-1.amzn2.0.1    perl-TermReadKey.x86_64 0:2.30-20.amzn2.0.2   
+
+Complete!
+[root@ip-172-31-10-82 etc]# cd
+[root@ip-172-31-10-82 ~]# git clone https://github.com/edurekacontent/dockerContent.git
+Cloning into 'dockerContent'...
+remote: Enumerating objects: 1135, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 1135 (delta 0), reused 6 (delta 0), pack-reused 1128
+Receiving objects: 100% (1135/1135), 25.68 MiB | 17.34 MiB/s, done.
+Resolving deltas: 100% (854/854), done.
+[root@ip-172-31-10-82 ~]# cat dockerfile
+cat: dockerfile: No such file or directory
+[root@ip-172-31-10-82 ~]# docker image ls
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+[root@ip-172-31-10-82 ~]# docker container
+
+Usage:  docker container COMMAND
+
+Manage containers
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  inspect     Display detailed information on one or more containers
+  kill        Kill one or more running containers
+  logs        Fetch the logs of a container
+  ls          List containers
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  prune       Remove all stopped containers
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  run         Run a command in a new container
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker container COMMAND --help' for more information on a command.
+[root@ip-172-31-10-82 ~]# 
