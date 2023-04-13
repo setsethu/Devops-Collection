@@ -1,0 +1,649 @@
+Last login: Thu Apr 13 06:13:19 2023 from ec2-13-233-177-5.ap-south-1.compute.amazonaws.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+11 package(s) needed for security, out of 16 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-42-196 ~]$ sudo -i
+[root@ip-172-31-42-196 ~]# yum update -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+224 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package dbus.x86_64 1:1.10.24-7.amzn2.0.2 will be updated
+---> Package dbus.x86_64 1:1.10.24-7.amzn2.0.3 will be an update
+---> Package dbus-libs.x86_64 1:1.10.24-7.amzn2.0.2 will be updated
+---> Package dbus-libs.x86_64 1:1.10.24-7.amzn2.0.3 will be an update
+---> Package kernel.x86_64 0:5.10.176-157.645.amzn2 will be installed
+---> Package kernel-tools.x86_64 0:5.10.173-154.642.amzn2 will be updated
+---> Package kernel-tools.x86_64 0:5.10.176-157.645.amzn2 will be an update
+---> Package kpatch-runtime.noarch 0:0.9.4-6.amzn2 will be updated
+---> Package kpatch-runtime.noarch 0:0.9.4-7.amzn2 will be an update
+---> Package python-babel.noarch 0:0.9.6-8.amzn2.0.1 will be updated
+---> Package python-babel.noarch 0:0.9.6-8.amzn2.0.2 will be an update
+---> Package python-lockfile.noarch 1:0.9.1-4.amzn2 will be obsoleted
+---> Package python-simplejson.x86_64 0:3.2.0-1.amzn2.0.2 will be obsoleted
+---> Package python2-lockfile.noarch 1:0.11.0-17.el7 will be obsoleting
+---> Package python2-simplejson.x86_64 0:3.11.1-1.el7 will be obsoleting
+---> Package systemd.x86_64 0:219-78.amzn2.0.21 will be updated
+---> Package systemd.x86_64 0:219-78.amzn2.0.22 will be an update
+---> Package systemd-libs.x86_64 0:219-78.amzn2.0.21 will be updated
+---> Package systemd-libs.x86_64 0:219-78.amzn2.0.22 will be an update
+---> Package systemd-sysv.x86_64 0:219-78.amzn2.0.21 will be updated
+---> Package systemd-sysv.x86_64 0:219-78.amzn2.0.22 will be an update
+---> Package vim-common.x86_64 2:9.0.1367-1.amzn2.0.1 will be updated
+---> Package vim-common.x86_64 2:9.0.1403-1.amzn2.0.1 will be an update
+---> Package vim-data.noarch 2:9.0.1367-1.amzn2.0.1 will be updated
+---> Package vim-data.noarch 2:9.0.1403-1.amzn2.0.1 will be an update
+---> Package vim-enhanced.x86_64 2:9.0.1367-1.amzn2.0.1 will be updated
+---> Package vim-enhanced.x86_64 2:9.0.1403-1.amzn2.0.1 will be an update
+---> Package vim-filesystem.noarch 2:9.0.1367-1.amzn2.0.1 will be updated
+---> Package vim-filesystem.noarch 2:9.0.1403-1.amzn2.0.1 will be an update
+---> Package vim-minimal.x86_64 2:9.0.1367-1.amzn2.0.1 will be updated
+---> Package vim-minimal.x86_64 2:9.0.1403-1.amzn2.0.1 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                             Arch                                    Version                                                 Repository                                               Size
+===================================================================================================================================================================================================================
+Installing:
+ kernel                                              x86_64                                  5.10.176-157.645.amzn2                                  amzn2extra-kernel-5.10                                   33 M
+ python2-lockfile                                    noarch                                  1:0.11.0-17.el7                                         epel                                                     29 k
+     replacing  python-lockfile.noarch 1:0.9.1-4.amzn2
+ python2-simplejson                                  x86_64                                  3.11.1-1.el7                                            epel                                                    188 k
+     replacing  python-simplejson.x86_64 3.2.0-1.amzn2.0.2
+Updating:
+ dbus                                                x86_64                                  1:1.10.24-7.amzn2.0.3                                   amzn2-core                                              245 k
+ dbus-libs                                           x86_64                                  1:1.10.24-7.amzn2.0.3                                   amzn2-core                                              167 k
+ kernel-tools                                        x86_64                                  5.10.176-157.645.amzn2                                  amzn2extra-kernel-5.10                                  192 k
+ kpatch-runtime                                      noarch                                  0.9.4-7.amzn2                                           amzn2-core                                               28 k
+ python-babel                                        noarch                                  0.9.6-8.amzn2.0.2                                       amzn2-core                                              1.4 M
+ systemd                                             x86_64                                  219-78.amzn2.0.22                                       amzn2-core                                              5.0 M
+ systemd-libs                                        x86_64                                  219-78.amzn2.0.22                                       amzn2-core                                              409 k
+ systemd-sysv                                        x86_64                                  219-78.amzn2.0.22                                       amzn2-core                                               98 k
+ vim-common                                          x86_64                                  2:9.0.1403-1.amzn2.0.1                                  amzn2-core                                              7.9 M
+ vim-data                                            noarch                                  2:9.0.1403-1.amzn2.0.1                                  amzn2-core                                               79 k
+ vim-enhanced                                        x86_64                                  2:9.0.1403-1.amzn2.0.1                                  amzn2-core                                              1.6 M
+ vim-filesystem                                      noarch                                  2:9.0.1403-1.amzn2.0.1                                  amzn2-core                                               74 k
+ vim-minimal                                         x86_64                                  2:9.0.1403-1.amzn2.0.1                                  amzn2-core                                              742 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install   3 Packages
+Upgrade  13 Packages
+
+Total download size: 51 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+(1/16): dbus-1.10.24-7.amzn2.0.3.x86_64.rpm                                                                                                                                                 | 245 kB  00:00:00     
+(2/16): dbus-libs-1.10.24-7.amzn2.0.3.x86_64.rpm                                                                                                                                            | 167 kB  00:00:00     
+(3/16): kernel-tools-5.10.176-157.645.amzn2.x86_64.rpm                                                                                                                                      | 192 kB  00:00:00     
+(4/16): kpatch-runtime-0.9.4-7.amzn2.noarch.rpm                                                                                                                                             |  28 kB  00:00:00     
+(5/16): python-babel-0.9.6-8.amzn2.0.2.noarch.rpm                                                                                                                                           | 1.4 MB  00:00:00     
+(6/16): kernel-5.10.176-157.645.amzn2.x86_64.rpm                                                                                                                                            |  33 MB  00:00:00     
+warning: /var/cache/yum/x86_64/2/epel/packages/python2-lockfile-0.11.0-17.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key for python2-lockfile-0.11.0-17.el7.noarch.rpm is not installed
+(7/16): python2-lockfile-0.11.0-17.el7.noarch.rpm                                                                                                                                           |  29 kB  00:00:00     
+(8/16): systemd-219-78.amzn2.0.22.x86_64.rpm                                                                                                                                                | 5.0 MB  00:00:00     
+(9/16): systemd-sysv-219-78.amzn2.0.22.x86_64.rpm                                                                                                                                           |  98 kB  00:00:00     
+(10/16): systemd-libs-219-78.amzn2.0.22.x86_64.rpm                                                                                                                                          | 409 kB  00:00:00     
+(11/16): vim-data-9.0.1403-1.amzn2.0.1.noarch.rpm                                                                                                                                           |  79 kB  00:00:00     
+(12/16): vim-common-9.0.1403-1.amzn2.0.1.x86_64.rpm                                                                                                                                         | 7.9 MB  00:00:00     
+(13/16): vim-enhanced-9.0.1403-1.amzn2.0.1.x86_64.rpm                                                                                                                                       | 1.6 MB  00:00:00     
+(14/16): vim-filesystem-9.0.1403-1.amzn2.0.1.noarch.rpm                                                                                                                                     |  74 kB  00:00:00     
+(15/16): vim-minimal-9.0.1403-1.amzn2.0.1.x86_64.rpm                                                                                                                                        | 742 kB  00:00:00     
+(16/16): python2-simplejson-3.11.1-1.el7.x86_64.rpm                                                                                                                                         | 188 kB  00:00:00     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               49 MB/s |  51 MB  00:00:01     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-11.noarch (@amzn2extra-epel)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : systemd-libs-219-78.amzn2.0.22.x86_64                                                                                                                                                          1/31 
+  Updating   : 2:vim-data-9.0.1403-1.amzn2.0.1.noarch                                                                                                                                                         2/31 
+  Updating   : 1:dbus-libs-1.10.24-7.amzn2.0.3.x86_64                                                                                                                                                         3/31 
+  Updating   : systemd-219-78.amzn2.0.22.x86_64                                                                                                                                                               4/31 
+  Updating   : 1:dbus-1.10.24-7.amzn2.0.3.x86_64                                                                                                                                                              5/31 
+  Updating   : 2:vim-filesystem-9.0.1403-1.amzn2.0.1.noarch                                                                                                                                                   6/31 
+  Updating   : 2:vim-common-9.0.1403-1.amzn2.0.1.x86_64                                                                                                                                                       7/31 
+  Updating   : 2:vim-enhanced-9.0.1403-1.amzn2.0.1.x86_64                                                                                                                                                     8/31 
+  Updating   : systemd-sysv-219-78.amzn2.0.22.x86_64                                                                                                                                                          9/31 
+  Updating   : 2:vim-minimal-9.0.1403-1.amzn2.0.1.x86_64                                                                                                                                                     10/31 
+  Installing : kernel-5.10.176-157.645.amzn2.x86_64                                                                                                                                                          11/31 
+  Updating   : kpatch-runtime-0.9.4-7.amzn2.noarch                                                                                                                                                           12/31 
+  Updating   : kernel-tools-5.10.176-157.645.amzn2.x86_64                                                                                                                                                    13/31 
+  Installing : 1:python2-lockfile-0.11.0-17.el7.noarch                                                                                                                                                       14/31 
+  Updating   : python-babel-0.9.6-8.amzn2.0.2.noarch                                                                                                                                                         15/31 
+  Installing : python2-simplejson-3.11.1-1.el7.x86_64                                                                                                                                                        16/31 
+  Cleanup    : systemd-sysv-219-78.amzn2.0.21.x86_64                                                                                                                                                         17/31 
+  Cleanup    : 1:dbus-1.10.24-7.amzn2.0.2.x86_64                                                                                                                                                             18/31 
+  Cleanup    : systemd-219-78.amzn2.0.21.x86_64                                                                                                                                                              19/31 
+  Cleanup    : 1:dbus-libs-1.10.24-7.amzn2.0.2.x86_64                                                                                                                                                        20/31 
+  Cleanup    : 2:vim-enhanced-9.0.1367-1.amzn2.0.1.x86_64                                                                                                                                                    21/31 
+  Cleanup    : 2:vim-common-9.0.1367-1.amzn2.0.1.x86_64                                                                                                                                                      22/31 
+  Cleanup    : 2:vim-minimal-9.0.1367-1.amzn2.0.1.x86_64                                                                                                                                                     23/31 
+  Cleanup    : 2:vim-data-9.0.1367-1.amzn2.0.1.noarch                                                                                                                                                        24/31 
+  Cleanup    : 2:vim-filesystem-9.0.1367-1.amzn2.0.1.noarch                                                                                                                                                  25/31 
+  Cleanup    : kpatch-runtime-0.9.4-6.amzn2.noarch                                                                                                                                                           26/31 
+  Erasing    : 1:python-lockfile-0.9.1-4.amzn2.noarch                                                                                                                                                        27/31 
+  Cleanup    : python-babel-0.9.6-8.amzn2.0.1.noarch                                                                                                                                                         28/31 
+  Cleanup    : systemd-libs-219-78.amzn2.0.21.x86_64                                                                                                                                                         29/31 
+  Cleanup    : kernel-tools-5.10.173-154.642.amzn2.x86_64                                                                                                                                                    30/31 
+  Erasing    : python-simplejson-3.2.0-1.amzn2.0.2.x86_64                                                                                                                                                    31/31 
+  Verifying  : 2:vim-filesystem-9.0.1403-1.amzn2.0.1.noarch                                                                                                                                                   1/31 
+  Verifying  : 2:vim-minimal-9.0.1403-1.amzn2.0.1.x86_64                                                                                                                                                      2/31 
+  Verifying  : 1:dbus-1.10.24-7.amzn2.0.3.x86_64                                                                                                                                                              3/31 
+  Verifying  : python2-simplejson-3.11.1-1.el7.x86_64                                                                                                                                                         4/31 
+  Verifying  : 1:dbus-libs-1.10.24-7.amzn2.0.3.x86_64                                                                                                                                                         5/31 
+  Verifying  : python-babel-0.9.6-8.amzn2.0.2.noarch                                                                                                                                                          6/31 
+  Verifying  : 2:vim-data-9.0.1403-1.amzn2.0.1.noarch                                                                                                                                                         7/31 
+  Verifying  : 2:vim-enhanced-9.0.1403-1.amzn2.0.1.x86_64                                                                                                                                                     8/31 
+  Verifying  : 1:python2-lockfile-0.11.0-17.el7.noarch                                                                                                                                                        9/31 
+  Verifying  : systemd-sysv-219-78.amzn2.0.22.x86_64                                                                                                                                                         10/31 
+  Verifying  : kernel-tools-5.10.176-157.645.amzn2.x86_64                                                                                                                                                    11/31 
+  Verifying  : kpatch-runtime-0.9.4-7.amzn2.noarch                                                                                                                                                           12/31 
+  Verifying  : systemd-libs-219-78.amzn2.0.22.x86_64                                                                                                                                                         13/31 
+  Verifying  : kernel-5.10.176-157.645.amzn2.x86_64                                                                                                                                                          14/31 
+  Verifying  : systemd-219-78.amzn2.0.22.x86_64                                                                                                                                                              15/31 
+  Verifying  : 2:vim-common-9.0.1403-1.amzn2.0.1.x86_64                                                                                                                                                      16/31 
+  Verifying  : kpatch-runtime-0.9.4-6.amzn2.noarch                                                                                                                                                           17/31 
+  Verifying  : systemd-sysv-219-78.amzn2.0.21.x86_64                                                                                                                                                         18/31 
+  Verifying  : 2:vim-enhanced-9.0.1367-1.amzn2.0.1.x86_64                                                                                                                                                    19/31 
+  Verifying  : python-simplejson-3.2.0-1.amzn2.0.2.x86_64                                                                                                                                                    20/31 
+  Verifying  : 2:vim-data-9.0.1367-1.amzn2.0.1.noarch                                                                                                                                                        21/31 
+  Verifying  : 2:vim-common-9.0.1367-1.amzn2.0.1.x86_64                                                                                                                                                      22/31 
+  Verifying  : kernel-tools-5.10.173-154.642.amzn2.x86_64                                                                                                                                                    23/31 
+  Verifying  : python-babel-0.9.6-8.amzn2.0.1.noarch                                                                                                                                                         24/31 
+  Verifying  : systemd-libs-219-78.amzn2.0.21.x86_64                                                                                                                                                         25/31 
+  Verifying  : systemd-219-78.amzn2.0.21.x86_64                                                                                                                                                              26/31 
+  Verifying  : 2:vim-minimal-9.0.1367-1.amzn2.0.1.x86_64                                                                                                                                                     27/31 
+  Verifying  : 1:dbus-1.10.24-7.amzn2.0.2.x86_64                                                                                                                                                             28/31 
+  Verifying  : 1:python-lockfile-0.9.1-4.amzn2.noarch                                                                                                                                                        29/31 
+  Verifying  : 1:dbus-libs-1.10.24-7.amzn2.0.2.x86_64                                                                                                                                                        30/31 
+  Verifying  : 2:vim-filesystem-9.0.1367-1.amzn2.0.1.noarch                                                                                                                                                  31/31 
+
+Installed:
+  kernel.x86_64 0:5.10.176-157.645.amzn2                               python2-lockfile.noarch 1:0.11.0-17.el7                               python2-simplejson.x86_64 0:3.11.1-1.el7                              
+
+Updated:
+  dbus.x86_64 1:1.10.24-7.amzn2.0.3                  dbus-libs.x86_64 1:1.10.24-7.amzn2.0.3          kernel-tools.x86_64 0:5.10.176-157.645.amzn2          kpatch-runtime.noarch 0:0.9.4-7.amzn2                
+  python-babel.noarch 0:0.9.6-8.amzn2.0.2            systemd.x86_64 0:219-78.amzn2.0.22              systemd-libs.x86_64 0:219-78.amzn2.0.22               systemd-sysv.x86_64 0:219-78.amzn2.0.22              
+  vim-common.x86_64 2:9.0.1403-1.amzn2.0.1           vim-data.noarch 2:9.0.1403-1.amzn2.0.1          vim-enhanced.x86_64 2:9.0.1403-1.amzn2.0.1            vim-filesystem.noarch 2:9.0.1403-1.amzn2.0.1         
+  vim-minimal.x86_64 2:9.0.1403-1.amzn2.0.1         
+
+Replaced:
+  python-lockfile.noarch 1:0.9.1-4.amzn2                                                                python-simplejson.x86_64 0:3.2.0-1.amzn2.0.2                                                               
+
+Complete!
+[root@ip-172-31-42-196 ~]# swapoff -a
+[root@ip-172-31-42-196 ~]# setenforce 0
+setenforce: SELinux is disabled
+[root@ip-172-31-42-196 ~]# yum install docker -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+224 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:20.10.17-1.amzn2.0.2 will be installed
+--> Processing Dependency: runc >= 1.0.0 for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Processing Dependency: libcgroup >= 0.40.rc1-5.15 for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Processing Dependency: containerd >= 1.3.2 for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Processing Dependency: pigz for package: docker-20.10.17-1.amzn2.0.2.x86_64
+--> Running transaction check
+---> Package containerd.x86_64 0:1.6.8-2.amzn2.0.1 will be installed
+---> Package libcgroup.x86_64 0:0.41-21.amzn2 will be installed
+---> Package pigz.x86_64 0:2.3.4-1.amzn2.0.1 will be installed
+---> Package runc.x86_64 0:1.1.4-1.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                        Arch                                       Version                                                     Repository                                             Size
+===================================================================================================================================================================================================================
+Installing:
+ docker                                         x86_64                                     20.10.17-1.amzn2.0.2                                        amzn2extra-docker                                      39 M
+Installing for dependencies:
+ containerd                                     x86_64                                     1.6.8-2.amzn2.0.1                                           amzn2extra-docker                                      27 M
+ libcgroup                                      x86_64                                     0.41-21.amzn2                                               amzn2-core                                             66 k
+ pigz                                           x86_64                                     2.3.4-1.amzn2.0.1                                           amzn2-core                                             81 k
+ runc                                           x86_64                                     1.1.4-1.amzn2.0.1                                           amzn2extra-docker                                     2.9 M
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  1 Package (+4 Dependent packages)
+
+Total download size: 69 M
+Installed size: 260 M
+Downloading packages:
+(1/5): libcgroup-0.41-21.amzn2.x86_64.rpm                                                                                                                                                   |  66 kB  00:00:00     
+(2/5): pigz-2.3.4-1.amzn2.0.1.x86_64.rpm                                                                                                                                                    |  81 kB  00:00:00     
+(3/5): containerd-1.6.8-2.amzn2.0.1.x86_64.rpm                                                                                                                                              |  27 MB  00:00:00     
+(4/5): docker-20.10.17-1.amzn2.0.2.x86_64.rpm                                                                                                                                               |  39 MB  00:00:00     
+(5/5): runc-1.1.4-1.amzn2.0.1.x86_64.rpm                                                                                                                                                    | 2.9 MB  00:00:00     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                               68 MB/s |  69 MB  00:00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : runc-1.1.4-1.amzn2.0.1.x86_64                                                                                                                                                                   1/5 
+  Installing : containerd-1.6.8-2.amzn2.0.1.x86_64                                                                                                                                                             2/5 
+  Installing : libcgroup-0.41-21.amzn2.x86_64                                                                                                                                                                  3/5 
+  Installing : pigz-2.3.4-1.amzn2.0.1.x86_64                                                                                                                                                                   4/5 
+  Installing : docker-20.10.17-1.amzn2.0.2.x86_64                                                                                                                                                              5/5 
+  Verifying  : containerd-1.6.8-2.amzn2.0.1.x86_64                                                                                                                                                             1/5 
+  Verifying  : pigz-2.3.4-1.amzn2.0.1.x86_64                                                                                                                                                                   2/5 
+  Verifying  : libcgroup-0.41-21.amzn2.x86_64                                                                                                                                                                  3/5 
+  Verifying  : docker-20.10.17-1.amzn2.0.2.x86_64                                                                                                                                                              4/5 
+  Verifying  : runc-1.1.4-1.amzn2.0.1.x86_64                                                                                                                                                                   5/5 
+
+Installed:
+  docker.x86_64 0:20.10.17-1.amzn2.0.2                                                                                                                                                                             
+
+Dependency Installed:
+  containerd.x86_64 0:1.6.8-2.amzn2.0.1                   libcgroup.x86_64 0:0.41-21.amzn2                   pigz.x86_64 0:2.3.4-1.amzn2.0.1                   runc.x86_64 0:1.1.4-1.amzn2.0.1                  
+
+Complete!
+[root@ip-172-31-42-196 ~]# systemctl enable docker 
+Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+[root@ip-172-31-42-196 ~]# systemctl start docker
+[root@ip-172-31-42-196 ~]# cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+> [kubernetes]
+> name=Kubernetes
+> baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+> enabled=1
+> gpgcheck=1
+> repo_gpgcheck=0
+> gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+> exclude=kube*
+> EOF
+[root@ip-172-31-42-196 ~]# cat <<EOF >  /etc/sysctl.d/k8s.conf
+> 
+> net.bridge.bridge-nf-call-ip6tables = 1
+> net.bridge.bridge-nf-call-iptables = 1
+> EOF
+[root@ip-172-31-42-196 ~]# sysctl --system
+* Applying /etc/sysctl.d/00-defaults.conf ...
+kernel.printk = 8 4 1 7
+kernel.panic = 30
+net.ipv4.neigh.default.gc_thresh1 = 0
+net.ipv6.neigh.default.gc_thresh1 = 0
+net.ipv4.neigh.default.gc_thresh2 = 15360
+net.ipv6.neigh.default.gc_thresh2 = 15360
+net.ipv4.neigh.default.gc_thresh3 = 16384
+net.ipv6.neigh.default.gc_thresh3 = 16384
+net.ipv4.tcp_wmem = 4096 20480 4194304
+net.ipv4.ip_default_ttl = 255
+* Applying /usr/lib/sysctl.d/00-system.conf ...
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+* Applying /usr/lib/sysctl.d/10-default-yama-scope.conf ...
+kernel.yama.ptrace_scope = 0
+* Applying /usr/lib/sysctl.d/50-default.conf ...
+kernel.sysrq = 16
+kernel.core_uses_pid = 1
+kernel.kptr_restrict = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.promote_secondaries = 1
+net.ipv4.conf.all.promote_secondaries = 1
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
+* Applying /etc/sysctl.d/99-amazon.conf ...
+kernel.sched_autogroup_enabled = 0
+* Applying /usr/lib/sysctl.d/99-ipv6.conf ...
+net.ipv6.conf.all.accept_dad = 0
+net.ipv6.conf.default.accept_dad = 0
+net.ipv6.conf.eth0.accept_dad = 0
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.d/k8s.conf ...
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+* Applying /etc/sysctl.conf ...
+[root@ip-172-31-42-196 ~]# yum install -y kubeadm-1.21.3 kubelet-1.21.3 kubectl-1.21.3 --disableexcludes=kubernetes 
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+kubernetes                                                                                                                                                                                  | 1.4 kB  00:00:00     
+kubernetes/primary                                                                                                                                                                          | 129 kB  00:00:00     
+kubernetes                                                                                                                                                                                                 953/953
+235 packages excluded due to repository priority protections
+Resolving Dependencies
+--> Running transaction check
+---> Package kubeadm.x86_64 0:1.21.3-0 will be installed
+--> Processing Dependency: kubernetes-cni >= 0.8.6 for package: kubeadm-1.21.3-0.x86_64
+--> Processing Dependency: cri-tools >= 1.13.0 for package: kubeadm-1.21.3-0.x86_64
+---> Package kubectl.x86_64 0:1.21.3-0 will be installed
+---> Package kubelet.x86_64 0:1.21.3-0 will be installed
+--> Processing Dependency: socat for package: kubelet-1.21.3-0.x86_64
+--> Processing Dependency: ebtables for package: kubelet-1.21.3-0.x86_64
+--> Processing Dependency: conntrack for package: kubelet-1.21.3-0.x86_64
+--> Running transaction check
+---> Package conntrack-tools.x86_64 0:1.4.4-5.amzn2.2 will be installed
+--> Processing Dependency: libnetfilter_cttimeout.so.1(LIBNETFILTER_CTTIMEOUT_1.1)(64bit) for package: conntrack-tools-1.4.4-5.amzn2.2.x86_64
+--> Processing Dependency: libnetfilter_cttimeout.so.1(LIBNETFILTER_CTTIMEOUT_1.0)(64bit) for package: conntrack-tools-1.4.4-5.amzn2.2.x86_64
+--> Processing Dependency: libnetfilter_cthelper.so.0(LIBNETFILTER_CTHELPER_1.0)(64bit) for package: conntrack-tools-1.4.4-5.amzn2.2.x86_64
+--> Processing Dependency: libnetfilter_queue.so.1()(64bit) for package: conntrack-tools-1.4.4-5.amzn2.2.x86_64
+--> Processing Dependency: libnetfilter_cttimeout.so.1()(64bit) for package: conntrack-tools-1.4.4-5.amzn2.2.x86_64
+--> Processing Dependency: libnetfilter_cthelper.so.0()(64bit) for package: conntrack-tools-1.4.4-5.amzn2.2.x86_64
+---> Package cri-tools.x86_64 0:1.25.0-1.amzn2.0.1 will be installed
+---> Package ebtables.x86_64 0:2.0.10-16.amzn2.0.1 will be installed
+---> Package kubernetes-cni.x86_64 0:1.2.0-0 will be installed
+---> Package socat.x86_64 0:1.7.3.2-2.amzn2.0.1 will be installed
+--> Running transaction check
+---> Package libnetfilter_cthelper.x86_64 0:1.0.0-10.amzn2.1 will be installed
+---> Package libnetfilter_cttimeout.x86_64 0:1.0.0-6.amzn2.1 will be installed
+---> Package libnetfilter_queue.x86_64 0:1.0.2-2.amzn2.0.2 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===================================================================================================================================================================================================================
+ Package                                                   Arch                                      Version                                                   Repository                                     Size
+===================================================================================================================================================================================================================
+Installing:
+ kubeadm                                                   x86_64                                    1.21.3-0                                                  kubernetes                                    9.1 M
+ kubectl                                                   x86_64                                    1.21.3-0                                                  kubernetes                                    9.5 M
+ kubelet                                                   x86_64                                    1.21.3-0                                                  kubernetes                                     20 M
+Installing for dependencies:
+ conntrack-tools                                           x86_64                                    1.4.4-5.amzn2.2                                           amzn2-core                                    186 k
+ cri-tools                                                 x86_64                                    1.25.0-1.amzn2.0.1                                        amzn2-core                                     17 M
+ ebtables                                                  x86_64                                    2.0.10-16.amzn2.0.1                                       amzn2-core                                    122 k
+ kubernetes-cni                                            x86_64                                    1.2.0-0                                                   kubernetes                                     17 M
+ libnetfilter_cthelper                                     x86_64                                    1.0.0-10.amzn2.1                                          amzn2-core                                     18 k
+ libnetfilter_cttimeout                                    x86_64                                    1.0.0-6.amzn2.1                                           amzn2-core                                     18 k
+ libnetfilter_queue                                        x86_64                                    1.0.2-2.amzn2.0.2                                         amzn2-core                                     24 k
+ socat                                                     x86_64                                    1.7.3.2-2.amzn2.0.1                                       amzn2-core                                    291 k
+
+Transaction Summary
+===================================================================================================================================================================================================================
+Install  3 Packages (+8 Dependent packages)
+
+Total download size: 73 M
+Installed size: 319 M
+Downloading packages:
+(1/11): conntrack-tools-1.4.4-5.amzn2.2.x86_64.rpm                                                                                                                                          | 186 kB  00:00:00     
+(2/11): ebtables-2.0.10-16.amzn2.0.1.x86_64.rpm                                                                                                                                             | 122 kB  00:00:00     
+(3/11): cri-tools-1.25.0-1.amzn2.0.1.x86_64.rpm                                                                                                                                             |  17 MB  00:00:00     
+warning: /var/cache/yum/x86_64/2/kubernetes/packages/23f7e018d7380fc0c11f0a12b7fda8ced07b1c04c4ba1c5f5cd24cd4bdfb304d-kubeadm-1.21.3-0.x86_64.rpm: Header V4 RSA/SHA512 Signature, key ID 3e1ba8d5: NOKEY00:11 ETA 
+Public key for 23f7e018d7380fc0c11f0a12b7fda8ced07b1c04c4ba1c5f5cd24cd4bdfb304d-kubeadm-1.21.3-0.x86_64.rpm is not installed
+(4/11): 23f7e018d7380fc0c11f0a12b7fda8ced07b1c04c4ba1c5f5cd24cd4bdfb304d-kubeadm-1.21.3-0.x86_64.rpm                                                                                        | 9.1 MB  00:00:02     
+(5/11): b04e5387f5522079ac30ee300657212246b14279e2ca4b58415c7bf1f8c8a8f5-kubectl-1.21.3-0.x86_64.rpm                                                                                        | 9.5 MB  00:00:02     
+(6/11): libnetfilter_cthelper-1.0.0-10.amzn2.1.x86_64.rpm                                                                                                                                   |  18 kB  00:00:00     
+(7/11): libnetfilter_queue-1.0.2-2.amzn2.0.2.x86_64.rpm                                                                                                                                     |  24 kB  00:00:00     
+(8/11): socat-1.7.3.2-2.amzn2.0.1.x86_64.rpm                                                                                                                                                | 291 kB  00:00:00     
+(9/11): libnetfilter_cttimeout-1.0.0-6.amzn2.1.x86_64.rpm                                                                                                                                   |  18 kB  00:00:00     
+(10/11): 0f2a2afd740d476ad77c508847bad1f559afc2425816c1f2ce4432a62dfe0b9d-kubernetes-cni-1.2.0-0.x86_64.rpm                                                                                 |  17 MB  00:00:00     
+(11/11): 7e38e980f058e3e43f121c2ba73d60156083d09be0acc2e5581372136ce11a1c-kubelet-1.21.3-0.x86_64.rpm                                                                                       |  20 MB  00:00:05     
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                                                              9.3 MB/s |  73 MB  00:00:07     
+Retrieving key from https://packages.cloud.google.com/yum/doc/yum-key.gpg
+Importing GPG key 0x13EDEF05:
+ Userid     : "Rapture Automatic Signing Key (cloud-rapture-signing-key-2022-03-07-08_01_01.pub)"
+ Fingerprint: a362 b822 f6de dc65 2817 ea46 b53d c80d 13ed ef05
+ From       : https://packages.cloud.google.com/yum/doc/yum-key.gpg
+Retrieving key from https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+Importing GPG key 0x3E1BA8D5:
+ Userid     : "Google Cloud Packages RPM Signing Key <gc-team@google.com>"
+ Fingerprint: 3749 e1ba 95a8 6ce0 5454 6ed2 f09c 394c 3e1b a8d5
+ From       : https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libnetfilter_queue-1.0.2-2.amzn2.0.2.x86_64                                                                                                                                                    1/11 
+  Installing : libnetfilter_cthelper-1.0.0-10.amzn2.1.x86_64                                                                                                                                                  2/11 
+  Installing : cri-tools-1.25.0-1.amzn2.0.1.x86_64                                                                                                                                                            3/11 
+  Installing : libnetfilter_cttimeout-1.0.0-6.amzn2.1.x86_64                                                                                                                                                  4/11 
+  Installing : conntrack-tools-1.4.4-5.amzn2.2.x86_64                                                                                                                                                         5/11 
+  Installing : ebtables-2.0.10-16.amzn2.0.1.x86_64                                                                                                                                                            6/11 
+  Installing : socat-1.7.3.2-2.amzn2.0.1.x86_64                                                                                                                                                               7/11 
+  Installing : kubernetes-cni-1.2.0-0.x86_64                                                                                                                                                                  8/11 
+  Installing : kubelet-1.21.3-0.x86_64                                                                                                                                                                        9/11 
+  Installing : kubectl-1.21.3-0.x86_64                                                                                                                                                                       10/11 
+  Installing : kubeadm-1.21.3-0.x86_64                                                                                                                                                                       11/11 
+  Verifying  : kubectl-1.21.3-0.x86_64                                                                                                                                                                        1/11 
+  Verifying  : socat-1.7.3.2-2.amzn2.0.1.x86_64                                                                                                                                                               2/11 
+  Verifying  : kubernetes-cni-1.2.0-0.x86_64                                                                                                                                                                  3/11 
+  Verifying  : ebtables-2.0.10-16.amzn2.0.1.x86_64                                                                                                                                                            4/11 
+  Verifying  : kubeadm-1.21.3-0.x86_64                                                                                                                                                                        5/11 
+  Verifying  : kubelet-1.21.3-0.x86_64                                                                                                                                                                        6/11 
+  Verifying  : conntrack-tools-1.4.4-5.amzn2.2.x86_64                                                                                                                                                         7/11 
+  Verifying  : libnetfilter_cttimeout-1.0.0-6.amzn2.1.x86_64                                                                                                                                                  8/11 
+  Verifying  : cri-tools-1.25.0-1.amzn2.0.1.x86_64                                                                                                                                                            9/11 
+  Verifying  : libnetfilter_cthelper-1.0.0-10.amzn2.1.x86_64                                                                                                                                                 10/11 
+  Verifying  : libnetfilter_queue-1.0.2-2.amzn2.0.2.x86_64                                                                                                                                                   11/11 
+
+Installed:
+  kubeadm.x86_64 0:1.21.3-0                                             kubectl.x86_64 0:1.21.3-0                                             kubelet.x86_64 0:1.21.3-0                                            
+
+Dependency Installed:
+  conntrack-tools.x86_64 0:1.4.4-5.amzn2.2                cri-tools.x86_64 0:1.25.0-1.amzn2.0.1                   ebtables.x86_64 0:2.0.10-16.amzn2.0.1                 kubernetes-cni.x86_64 0:1.2.0-0           
+  libnetfilter_cthelper.x86_64 0:1.0.0-10.amzn2.1         libnetfilter_cttimeout.x86_64 0:1.0.0-6.amzn2.1         libnetfilter_queue.x86_64 0:1.0.2-2.amzn2.0.2         socat.x86_64 0:1.7.3.2-2.amzn2.0.1        
+
+Complete!
+[root@ip-172-31-42-196 ~]# systemctl enable kubelet 
+Created symlink from /etc/systemd/system/multi-user.target.wants/kubelet.service to /usr/lib/systemd/system/kubelet.service.
+[root@ip-172-31-42-196 ~]# systemctl start kubelet
+[root@ip-172-31-42-196 ~]# sudo kubeadm init --apiserver-advertise-address=172.31.42.196 --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem
+I0413 11:29:17.334387   11676 version.go:254] remote version is much newer: v1.27.0; falling back to: stable-1.21
+[init] Using Kubernetes version: v1.21.14
+[preflight] Running pre-flight checks
+        [WARNING NumCPU]: the number of available CPUs 1 is less than the required 2
+        [WARNING Mem]: the system RAM (952 MB) is less than the minimum 1700 MB
+        [WARNING IsDockerSystemdCheck]: detected "cgroupfs" as the Docker cgroup driver. The recommended driver is "systemd". Please follow the guide at https://kubernetes.io/docs/setup/cri/
+        [WARNING FileExisting-tc]: tc not found in system path
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [ip-172-31-42-196.ap-south-1.compute.internal kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 172.31.42.196]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [ip-172-31-42-196.ap-south-1.compute.internal localhost] and IPs [172.31.42.196 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [ip-172-31-42-196.ap-south-1.compute.internal localhost] and IPs [172.31.42.196 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 14.008578 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.21" in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node ip-172-31-42-196.ap-south-1.compute.internal as control-plane by adding the labels: [node-role.kubernetes.io/master(deprecated) node-role.kubernetes.io/control-plane node.kubernetes.io/exclude-from-external-load-balancers]
+[mark-control-plane] Marking the node ip-172-31-42-196.ap-south-1.compute.internal as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: 0vjwks.2p3rufl6b3xzq9gl
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[kubelet-finalize] Updating "/etc/kubernetes/kubelet.conf" to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.42.196:6443 --token 0vjwks.2p3rufl6b3xzq9gl \
+        --discovery-token-ca-cert-hash sha256:35e393864ca148f9b926ee2479ecb651e68c65842e1a5ce2ee400f6d45a34a87 
+[root@ip-172-31-42-196 ~]# mkdir -p $HOME/.kube
+[root@ip-172-31-42-196 ~]# sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+[root@ip-172-31-42-196 ~]# sudo chown $(id -u):$(id -g) $HOME/.kube/config
+[root@ip-172-31-42-196 ~]# export KUBECONFIG=/etc/kubernetes/kubelet.conf
+[root@ip-172-31-42-196 ~]# sudo kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml 
+Warning: rbac.authorization.k8s.io/v1beta1 ClusterRole is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRole
+clusterrole.rbac.authorization.k8s.io/calico-node created
+Warning: rbac.authorization.k8s.io/v1beta1 ClusterRoleBinding is deprecated in v1.17+, unavailable in v1.22+; use rbac.authorization.k8s.io/v1 ClusterRoleBinding
+clusterrolebinding.rbac.authorization.k8s.io/calico-node created
+[root@ip-172-31-42-196 ~]# sudo kubectl apply -f https://docs.projectcalico.org/v3.8/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calico-networking/1.7/calico.yaml 
+configmap/calico-config created
+Warning: apiextensions.k8s.io/v1beta1 CustomResourceDefinition is deprecated in v1.16+, unavailable in v1.22+; use apiextensions.k8s.io/v1 CustomResourceDefinition
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org created
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org created
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrole.rbac.authorization.k8s.io/calico-node configured
+clusterrolebinding.rbac.authorization.k8s.io/calico-node configured
+daemonset.apps/calico-node created
+serviceaccount/calico-node created
+deployment.apps/calico-kube-controllers created
+serviceaccount/calico-kube-controllers created
+[root@ip-172-31-42-196 ~]# kubectl get pods --all-namespaces
+NAMESPACE     NAME                                                                   READY   STATUS     RESTARTS   AGE
+kube-system   calico-kube-controllers-7f6768fdfb-s9765                               0/1     Pending    0          8s
+kube-system   calico-node-txsfs                                                      0/1     Init:0/3   0          8s
+kube-system   coredns-558bd4d5db-hnw9t                                               0/1     Pending    0          68s
+kube-system   coredns-558bd4d5db-k64s9                                               0/1     Pending    0          68s
+kube-system   etcd-ip-172-31-42-196.ap-south-1.compute.internal                      1/1     Running    0          85s
+kube-system   kube-apiserver-ip-172-31-42-196.ap-south-1.compute.internal            1/1     Running    0          81s
+kube-system   kube-controller-manager-ip-172-31-42-196.ap-south-1.compute.internal   1/1     Running    0          81s
+kube-system   kube-proxy-d2l2l                                                       1/1     Running    0          69s
+kube-system   kube-scheduler-ip-172-31-42-196.ap-south-1.compute.internal            1/1     Running    0          81s
+[root@ip-172-31-42-196 ~]# kubeadm token create --print-join-command
+
+timed out waiting for the condition
+To see the stack trace of this error execute with --v=5 or higher
+[root@ip-172-31-42-196 ~]# 
+[root@ip-172-31-42-196 ~]# kubectl get nodes
+NAME                                           STATUS   ROLES                  AGE    VERSION
+ip-172-31-42-196.ap-south-1.compute.internal   Ready    control-plane,master   3m5s   v1.21.3
+[root@ip-172-31-42-196 ~]# kubectl describe nodes
+Name:               ip-172-31-42-196.ap-south-1.compute.internal
+Roles:              control-plane,master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=ip-172-31-42-196.ap-south-1.compute.internal
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node-role.kubernetes.io/master=
+                    node.kubernetes.io/exclude-from-external-load-balancers=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 172.31.42.196/20
+                    projectcalico.org/IPv4IPIPTunnelAddr: 192.168.205.192
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 13 Apr 2023 11:30:09 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  ip-172-31-42-196.ap-south-1.compute.internal
+  AcquireTime:     <unset>
+  RenewTime:       Thu, 13 Apr 2023 11:33:17 +0000
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Thu, 13 Apr 2023 11:32:04 +0000   Thu, 13 Apr 2023 11:32:04 +0000   CalicoIsUp                   Calico is running on this node
+  MemoryPressure       False   Thu, 13 Apr 2023 11:32:46 +0000   Thu, 13 Apr 2023 11:30:05 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Thu, 13 Apr 2023 11:32:46 +0000   Thu, 13 Apr 2023 11:30:05 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Thu, 13 Apr 2023 11:32:46 +0000   Thu, 13 Apr 2023 11:30:05 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Thu, 13 Apr 2023 11:32:46 +0000   Thu, 13 Apr 2023 11:31:44 +0000   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  172.31.42.196
+  Hostname:    ip-172-31-42-196.ap-south-1.compute.internal
+Capacity:
+  cpu:                1
+  ephemeral-storage:  8376300Ki
+  hugepages-2Mi:      0
+  memory:             975604Ki
+  pods:               110
+Allocatable:
+  cpu:                1
+  ephemeral-storage:  7719598068
+  hugepages-2Mi:      0
+  memory:             873204Ki
+  pods:               110
+System Info:
+  Machine ID:                 06f227503eac4cbcbdb589862db1c3e7
+  System UUID:                ec288a38-92c3-8e1e-8356-deb5fee122b2
+  Boot ID:                    bdddf342-9301-4400-8a74-ede3656b670e
+  Kernel Version:             5.10.173-154.642.amzn2.x86_64
+  OS Image:                   Amazon Linux 2
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  docker://20.10.17
+  Kubelet Version:            v1.21.3
+  Kube-Proxy Version:         v1.21.3
+PodCIDR:                      192.168.0.0/24
+PodCIDRs:                     192.168.0.0/24
+Non-terminated Pods:          (8 in total)
+  Namespace                   Name                                                                    CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                                                    ------------  ----------  ---------------  -------------  ---
+  kube-system                 calico-kube-controllers-7f6768fdfb-s9765                                0 (0%)        0 (0%)      0 (0%)           0 (0%)         112s
+  kube-system                 calico-node-txsfs                                                       250m (25%)    0 (0%)      0 (0%)           0 (0%)         112s
+  kube-system                 coredns-558bd4d5db-k64s9                                                100m (10%)    0 (0%)      70Mi (8%)        170Mi (19%)    2m52s
+  kube-system                 etcd-ip-172-31-42-196.ap-south-1.compute.internal                       100m (10%)    0 (0%)      100Mi (11%)      0 (0%)         3m9s
+  kube-system                 kube-apiserver-ip-172-31-42-196.ap-south-1.compute.internal             250m (25%)    0 (0%)      0 (0%)           0 (0%)         3m5s
+  kube-system                 kube-controller-manager-ip-172-31-42-196.ap-south-1.compute.internal    200m (20%)    0 (0%)      0 (0%)           0 (0%)         3m5s
+  kube-system                 kube-proxy-d2l2l                                                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         2m53s
+  kube-system                 kube-scheduler-ip-172-31-42-196.ap-south-1.compute.internal             100m (10%)    0 (0%)      0 (0%)           0 (0%)         3m5s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests     Limits
+  --------           --------     ------
+  cpu                1 (100%)     0 (0%)
+  memory             170Mi (19%)  170Mi (19%)
+  ephemeral-storage  0 (0%)       0 (0%)
+  hugepages-2Mi      0 (0%)       0 (0%)
+Events:              <none>
+[root@ip-172-31-42-196 ~]# 
